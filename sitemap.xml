@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Sitemap — Les Terrasses du Fort
+  À soumettre dans Google Search Console :
+  https://search.google.com/search-console → Sitemaps → Entrer l'URL du sitemap
+
+  URL du sitemap à soumettre :
+  https://www.les-terrasses-du-fort.fr/sitemap.xml
+
+  Remplacer SITE_URL par le domaine réel si différent de les-terrasses-du-fort.fr
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://www.les-terrasses-du-fort.fr/</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <!-- Images pour l'indexation Google Images -->
+    <image:image>
+      <image:loc>https://cdn01.eviivo.media/images/d/896ed234ab04bb52d9680c6c1a00ec064d837e67776d7a1272cb7a5f51d25ccd-991be0327c_v0_w1920xh1080_rDEF.jpeg</image:loc>
+      <image:title>Vue extérieure — Les Terrasses du Fort, Basse-Terre, Guadeloupe</image:title>
+      <image:geo_location>Basse-Terre, Guadeloupe, France</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://cdn01.eviivo.media/images/d/e63b7423ad7b173529d2fed1887460dbb29a5de478fc8687024fbe2abbba60c8-991be0327c_v0_w800xh600_rDEF.jpeg</image:loc>
+      <image:title>Intérieur du studio — salle de séjour avec vue mer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cdn01.eviivo.media/images/d/4bf9cbf006038bb1f839e2780b5f0fced5349fb295a9594f19559e37001e29e1-991be0327c_v0_w800xh600_rDEF.jpeg</image:loc>
+      <image:title>Cuisine équipée — studio Les Terrasses du Fort</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cdn01.eviivo.media/images/d/da4e33d47adfc627ea68769bf01659d27ba4272a23507380555d2fae82bb78d6-991be0327c_v0_w800xh600_rDEF.jpeg</image:loc>
+      <image:title>Salle de bain — douche italienne en pierre de Bali</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cdn01.eviivo.media/images/d/19fa8d20418afe952295d9a9ed0b5252b5ba358b8abb0676d096a7273cde7f26-991be0327c_v0_w800xh600_rDEF.jpeg</image:loc>
+      <image:title>Vue panoramique mer 180° depuis le studio, Basse-Terre</image:title>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.les-terrasses-du-fort.fr/" />
+  </url>
+
+</urlset>

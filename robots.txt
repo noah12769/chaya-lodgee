@@ -1,0 +1,18 @@
+# robots.txt — Les Terrasses du Fort
+# https://www.les-terrasses-du-fort.fr/robots.txt
+#
+# Documentation : https://developers.google.com/search/docs/crawling-indexing/robots/intro
+
+# Autoriser tous les robots
+User-agent: *
+Allow: /
+
+# Bloquer les assets non pertinents pour l'indexation
+Disallow: /public/*.svg
+Disallow: /public/logo-airbnb.svg
+Disallow: /public/logo-airbnb-belo.svg
+Disallow: /public/logo-booking.svg
+Disallow: /public/logo-vacationrentals.svg
+
+# Sitemap — à soumettre aussi dans Google Search Console
+Sitemap: https://www.les-terrasses-du-fort.fr/sitemap.xml
