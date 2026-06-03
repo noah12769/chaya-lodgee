@@ -68,7 +68,7 @@
   min-height: 640px;
   flex-direction: column;
   align-items: center;
-  padding: 160px var(--padding-20) var(--padding-24);
+  padding: clamp(68px, 12vh, 160px) var(--padding-20) var(--padding-24);
   box-sizing: border-box;
   position: relative;
   isolation: isolate;
@@ -115,6 +115,7 @@
 }
 .container-hero-content {
   width: var(--width-1600);
+  max-width: 100%; /* empêche le débordement sur tout écran < 1600px */
   flex: 1;
   align-items: center;
   justify-content: space-between;
@@ -188,7 +189,7 @@
   gap: var(--item-spacing-12);
   max-width: var(--width-624);
   font-size: var(--font-size-16);
-  margin-top: 200px;
+  margin-top: clamp(16px, 10vh, 160px); /* adaptatif selon hauteur viewport */
 }
 .container-div {
   align-self: stretch;
@@ -3080,7 +3081,7 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
-    margin-top: 180px;
+    margin-top: clamp(12px, 6vh, 80px);
   }
   .icon-blocks .container-div {
     width: 100%;
@@ -4273,12 +4274,54 @@ html, body {
 
   /* ── HERO : s'adapte à la hauteur visible (exclut chrome du navigateur) ── */
   .hero {
-    height: 100svh; /* small viewport — exclut toolbar Safari/Chrome */
-    padding-top: 80px;
+    height: 100svh;
+    padding-top: clamp(60px, 8vh, 104px);
   }
-  /* Réduit le grand espace entre titre et badges */
+  /* Réduit le grand espace entre titre et badges (déjà géré par clamp global) */
   .icon-blocks {
-    margin-top: 32px;
+    margin-top: clamp(16px, 4vh, 48px);
+  }
+
+  /* ── HERO info-blocks : layout colonne pour éviter overflow horizontal ── */
+  /* (à ≤1350px, les 4 blocs en ligne ne tiendraient pas dans la largeur) */
+  .info-blocks {
+    flex-direction: column !important;
+    gap: 0 !important;
+    align-items: stretch !important;
+    width: 100%;
+  }
+  .blocks-container,
+  .blocks-container2,
+  .blocks-container4 {
+    min-width: 0 !important;
+    max-width: none !important;
+    flex: unset !important;
+    width: 100%;
+    align-items: stretch !important;
+    padding: 5px 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.15) !important;
+  }
+  .left,
+  .center,
+  .right {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100%;
+    gap: 8px !important;
+    text-align: unset !important;
+  }
+  .pframer-text4,
+  .pframer-text6,
+  .pframer-text9,
+  .pframer-text10 {
+    align-items: flex-end !important;
+  }
+  /* Valeurs texte réduites pour tenir sur une ligne */
+  .acres, .cottage, .for-sale {
+    font-size: clamp(18px, 2.5vw, 32px) !important;
+    line-height: 1.2 !important;
+    height: auto !important;
   }
 
   /* ── CONTACT : deux cartes à égale hauteur côte à côte ── */
