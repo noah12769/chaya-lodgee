@@ -4346,3 +4346,51 @@ html, body {
     min-width: 0;
   }
 }
+
+/* ============================================================
+   HERO INFO-BAR — layout colonne automatique ≤ 1500px
+   Quand les 4 blocs ne tiennent pas en ligne, ils s'empilent
+   (label gauche / valeur droite) comme sur mobile.
+   ============================================================ */
+@media screen and (max-width: 1500px) {
+  .info-blocks {
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
+    align-items: stretch !important;
+    width: 100%;
+  }
+  .blocks-container,
+  .blocks-container2,
+  .blocks-container4 {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    flex: unset !important;
+    width: 100% !important;
+    align-items: stretch !important;
+    padding: 6px 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.18) !important;
+  }
+  .left,
+  .center,
+  .right {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 12px !important;
+    text-align: unset !important;
+  }
+  .pframer-text4,
+  .pframer-text6,
+  .pframer-text9,
+  .pframer-text10 {
+    align-items: flex-end !important;
+  }
+  .acres, .cottage, .for-sale {
+    font-size: clamp(20px, 2.8vw, 36px) !important;
+    line-height: 1.15 !important;
+    height: auto !important;
+    white-space: nowrap;
+  }
+}
