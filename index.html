@@ -138,8 +138,8 @@
     }
     </script>
 
-    <link rel="stylesheet" href="./styles/global.css?v=20260603-8" />
-    <link rel="stylesheet" href="./styles/main.css?v=20260603-8" />
+    <link rel="stylesheet" href="./styles/global.css?v=20260603-9" />
+    <link rel="stylesheet" href="./styles/main.css?v=20260603-9" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap"
@@ -1661,6 +1661,20 @@
     </div>
   </div>
 
+    <script>
+      // ── iOS Safari : fix hauteur hero (window.innerHeight) ─────────
+      // Sur iPhone, 100dvh/100svh est calculé incorrectement au premier
+      // rendu à cause de la barre d'adresse Safari. Cette fonction force
+      // la vraie hauteur visible via window.innerHeight.
+      (function() {
+        var hero = document.querySelector('.hero');
+        function fixHeroHeight() {
+          if (hero) hero.style.height = window.innerHeight + 'px';
+        }
+        fixHeroHeight();
+        window.addEventListener('resize', fixHeroHeight, { passive: true });
+      })();
+    </script>
     <script>
       // ── Booking modal ──────────────────────────────────────────────
       var bookingOverlay = document.getElementById('bookingOverlay');
