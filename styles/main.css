@@ -69,6 +69,7 @@
   flex-direction: column;
   align-items: center;
   padding: clamp(68px, 12vh, 160px) var(--padding-20) var(--padding-24);
+  background-color: #111; /* fond sombre si l'image ne couvre pas complètement */
   box-sizing: border-box;
   position: relative;
   isolation: isolate;
@@ -4314,12 +4315,6 @@ html, body {
    → les 4 rangées font 176px → déborde la hero sur iPhone.
    ============================================================ */
 @media screen and (max-width: 768px) {
-  /* Image hero : zoom léger pour rogner plafond sombre (haut) et sol (bas) */
-  .image-icon {
-    transform: scale(1.22);
-    transform-origin: center 42%;
-  }
-
   /* Valeurs info-bar réduites pour tenir dans la hero */
   .acres, .cottage, .for-sale {
     font-size: 15px !important;
