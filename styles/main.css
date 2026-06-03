@@ -4308,3 +4308,31 @@ html, body {
   }
 }
 
+/* ============================================================
+   MOBILE HERO FIX — info-bar et badges compacts (≤768px)
+   Problème : à ≤925px, .acres/.cottage/.for-sale passent à 32px
+   → les 4 rangées font 176px → déborde la hero sur iPhone.
+   ============================================================ */
+@media screen and (max-width: 768px) {
+  /* Valeurs info-bar réduites pour tenir dans la hero */
+  .acres, .cottage, .for-sale {
+    font-size: 15px !important;
+    line-height: 1.25 !important;
+    height: auto !important;
+  }
+  .pframer-text4,
+  .pframer-text6,
+  .pframer-text10 {
+    font-size: 15px !important;
+  }
+
+  /* Badges (Studio / 1 Chambre / Vue Mer) : padding réduit */
+  .transparent {
+    padding: 12px 20px !important;
+  }
+
+  /* Réduction du margin-top entre titre et badges */
+  .icon-blocks {
+    margin-top: 16px !important;
+  }
+}
