@@ -4314,6 +4314,12 @@ html, body {
    → les 4 rangées font 176px → déborde la hero sur iPhone.
    ============================================================ */
 @media screen and (max-width: 768px) {
+  /* Image hero : zoom léger pour rogner plafond sombre (haut) et sol (bas) */
+  .image-icon {
+    transform: scale(1.22);
+    transform-origin: center 42%;
+  }
+
   /* Valeurs info-bar réduites pour tenir dans la hero */
   .acres, .cottage, .for-sale {
     font-size: 15px !important;
