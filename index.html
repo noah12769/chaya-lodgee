@@ -23,7 +23,7 @@
     <meta property="og:title" content="Les Terrasses du Fort — Studio Vue Mer, Basse-Terre, Guadeloupe" />
     <meta property="og:description" content="Studio de standing avec vue panoramique mer 180°. Cuisine équipée, lit suspendu, à 5 min du Fort Delgrès. Réservez directement ou sur Airbnb / Booking." />
     <meta property="og:url" content="https://www.les-terrasses-du-fort.fr/" />
-    <meta property="og:image" content="./assets/images/photo-05.jpg" />
+    <meta property="og:image" content="https://www.les-terrasses-du-fort.fr/assets/images/photo-05.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Studio Les Terrasses du Fort — Vue mer panoramique 180°, Basse-Terre, Guadeloupe" />
@@ -35,7 +35,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Les Terrasses du Fort — Studio Vue Mer, Guadeloupe" />
     <meta name="twitter:description" content="Studio de standing avec vue panoramique mer 180° à Basse-Terre. Réservez sur Airbnb ou Booking." />
-    <meta name="twitter:image" content="./assets/images/photo-05.jpg" />
+    <meta name="twitter:image" content="https://www.les-terrasses-du-fort.fr/assets/images/photo-05.jpg" />
 
     <!-- ═══════════════════════════════════════════════════════════
          Favicon & icônes mobiles
@@ -419,6 +419,17 @@
       flex-shrink: 0;
     }
     .footer-brand-center { text-align: center; }
+
+    /* ── Menu mobile — bouton Réserver ───────────────────────────── */
+    .mobile-menu-item--reserve {
+      background: #111 !important;
+      color: #fff !important;
+      margin-top: 4px;
+      justify-content: center;
+    }
+    .mobile-menu-item--reserve:hover {
+      background: #333 !important;
+    }
   </style>
   </head>
   <body>
@@ -491,7 +502,7 @@
                     <div class="property-type">Type</div>
                   </div>
                   <div class="pframer-text4">
-                    <h1 class="cottage">Studio</h1>
+                    <div class="cottage">Studio</div>
                   </div>
                 </div>
               </div>
@@ -521,7 +532,7 @@
                     <div class="lot-size">Courte Durée</div>
                   </div>
                   <div class="pframer-text10">
-                    <h1 class="for-sale">À Louer</h1>
+                    <div class="for-sale">À Louer</div>
                   </div>
                 </div>
               </div>
@@ -1264,7 +1275,7 @@
                 </div>
                 <div class="question-label">
                   <h2 class="cozy-cottage-in">
-                    Réservez Votre <br />Séjour en Guadeloupe
+                    Réservez Votre <br />Séjour sur la Basse-Terre
                   </h2>
                 </div>
               </div>
@@ -1392,7 +1403,7 @@
                           <div class="background3"></div>
                           <div class="email-links">
                             <div class="agency-mail">
-                              <a class="view-on-map" href="https://www.airbnb.fr/rooms/1542739153967214734" target="_blank">Réserver Airbnb</a>
+                              <a class="view-on-map" href="https://www.airbnb.fr/rooms/1542739153967214734" target="_blank" rel="noopener noreferrer">Réserver Airbnb</a>
                             </div>
                           </div>
                           <div class="component-126 plat-ico-wrap">
@@ -1406,11 +1417,27 @@
                           <div class="background3"></div>
                           <div class="email-links">
                             <div class="agency-mail">
-                              <a class="view-on-map" href="https://www.booking.com/searchresults.fr.html?ss=Les+Terrasses+du+Fort+Basse-Terre+Guadeloupe" target="_blank">Réserver Booking</a>
+                              <a class="view-on-map" href="https://www.booking.com/searchresults.fr.html?ss=Les+Terrasses+du+Fort+Basse-Terre+Guadeloupe" target="_blank" rel="noopener noreferrer">Réserver Booking</a>
                             </div>
                           </div>
                           <div class="component-126 plat-ico-wrap">
                             <img src="./assets/logos/logo-booking.svg" alt="Booking.com" class="plat-logo-ico" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="agency-container-parent">
+                      <div class="agency-container" style="width:100%">
+                        <div class="default28 plat-btn">
+                          <div class="after35"></div>
+                          <div class="background3"></div>
+                          <div class="email-links">
+                            <div class="agency-mail">
+                              <a class="view-on-map" href="https://www.les-terrasses-du-fort.fr/fr-FR/le-studio?noofrooms=1&adults1=2&children1=0&utm_source=website&utm_medium=direct" target="_blank" rel="noopener">Réserver sur le Site</a>
+                            </div>
+                          </div>
+                          <div class="component-126 plat-ico-wrap">
+                            <svg class="plat-logo-ico" viewBox="0 0 32 32" fill="none" stroke="#1e6b2e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="16" r="13"/><line x1="3" y1="16" x2="29" y2="16"/><path d="M16 3a20 20 0 0 1 4 13 20 20 0 0 1-4 13 20 20 0 0 1-4-13 20 20 0 0 1 4-13z"/></svg>
                           </div>
                         </div>
                       </div>
@@ -1607,7 +1634,7 @@
           <a class="mobile-menu-item" data-scroll="overview">Présentation</a>
           <a class="mobile-menu-item" data-scroll="gallery">Galerie</a>
           <a class="mobile-menu-item" data-scroll="location">Localisation</a>
-          <a class="mobile-menu-item" data-scroll="contact">Contact</a>
+          <a class="mobile-menu-item mobile-menu-item--reserve" href="https://www.les-terrasses-du-fort.fr/fr-FR/le-studio?noofrooms=1&adults1=2&children1=0&utm_source=website&utm_medium=direct" target="_blank" rel="noopener">Réserver</a>
         </div>
       </header>
     </div>

@@ -38,7 +38,7 @@
       ]
     },
     {
-      "source": "/(index\\.css|global\\.css)",
+      "source": "/styles/(.*\\.css)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -74,6 +74,11 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/reservation",
+      "destination": "https://www.les-terrasses-du-fort.fr/fr-FR/le-studio?noofrooms=1&adults1=2&children1=0&utm_source=website&utm_medium=direct",
+      "permanent": false
     }
   ]
 }
