@@ -64,6 +64,7 @@
   width: 100%;
   min-width: 100%;
   height: 100vh;
+  height: 100svh; /* exclut la barre navigateur sur iOS/Android */
   min-height: 640px;
   flex-direction: column;
   align-items: center;
@@ -4268,6 +4269,16 @@ html, body {
     height: auto;
     max-height: 500px;
     object-fit: cover;
+  }
+
+  /* ── HERO : s'adapte à la hauteur visible (exclut chrome du navigateur) ── */
+  .hero {
+    height: 100svh; /* small viewport — exclut toolbar Safari/Chrome */
+    padding-top: 80px;
+  }
+  /* Réduit le grand espace entre titre et badges */
+  .icon-blocks {
+    margin-top: 32px;
   }
 
   /* ── CONTACT : deux cartes à égale hauteur côte à côte ── */
