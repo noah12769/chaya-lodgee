@@ -267,9 +267,9 @@
   align-items: flex-start;
 }
 .info-blocks {
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* reste sur une ligne, le gap se réduit */
   align-content: flex-start;
-  gap: var(--item-spacing-s);
+  gap: clamp(8px, 2vw, 24px); /* gap responsive */
   font-size: var(--item-spacing-12);
   font-family: var(--font-family-Font-2);
 }
@@ -279,9 +279,10 @@
 }
 .blocks-container {
   flex: 1;
-  min-width: 286px;
+  min-width: 0; /* peut se réduire librement */
   max-width: 382px;
   text-align: left;
+  overflow: hidden;
 }
 .left {
   gap: var(--item-spacing-5);
@@ -299,7 +300,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-size: var(--font-size-40);
+  font-size: clamp(14px, 2.8vw, 40px);
   font-family: var(--font-family-Font-1);
 }
 .cottage {
@@ -322,8 +323,9 @@
 .blocks-container2 {
   flex: 1;
   align-items: flex-start;
-  min-width: 286px;
+  min-width: 0;
   max-width: 382px;
+  overflow: hidden;
 }
 .center {
   align-items: center;
@@ -341,7 +343,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: var(--font-size-40);
+  font-size: clamp(14px, 2.8vw, 40px);
   font-family: var(--font-family-Font-1);
 }
 .acres {
@@ -356,9 +358,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-width: 286px;
+  min-width: 0;
   max-width: 382px;
   text-align: right;
+  overflow: hidden;
 }
 .right {
   gap: var(--item-spacing-5);
@@ -372,7 +375,7 @@
   align-items: flex-end;
 }
 .pframer-text10 {
-  font-size: var(--font-size-40);
+  font-size: clamp(14px, 2.8vw, 40px);
   font-family: var(--font-family-Font-1);
 }
 .for-sale {
@@ -4282,48 +4285,6 @@ html, body {
     margin-top: clamp(16px, 4vh, 48px);
   }
 
-  /* ── HERO info-blocks : layout colonne pour éviter overflow horizontal ── */
-  /* (à ≤1350px, les 4 blocs en ligne ne tiendraient pas dans la largeur) */
-  .info-blocks {
-    flex-direction: column !important;
-    gap: 0 !important;
-    align-items: stretch !important;
-    width: 100%;
-  }
-  .blocks-container,
-  .blocks-container2,
-  .blocks-container4 {
-    min-width: 0 !important;
-    max-width: none !important;
-    flex: unset !important;
-    width: 100%;
-    align-items: stretch !important;
-    padding: 5px 0 !important;
-    border-bottom: 1px solid rgba(255,255,255,0.15) !important;
-  }
-  .left,
-  .center,
-  .right {
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    width: 100%;
-    gap: 8px !important;
-    text-align: unset !important;
-  }
-  .pframer-text4,
-  .pframer-text6,
-  .pframer-text9,
-  .pframer-text10 {
-    align-items: flex-end !important;
-  }
-  /* Valeurs texte réduites pour tenir sur une ligne */
-  .acres, .cottage, .for-sale {
-    font-size: clamp(18px, 2.5vw, 32px) !important;
-    line-height: 1.2 !important;
-    height: auto !important;
-  }
-
   /* ── CONTACT : deux cartes à égale hauteur côte à côte ── */
 
   /* Force les deux contact-block côte à côte sans retour à la ligne */
@@ -4347,50 +4308,3 @@ html, body {
   }
 }
 
-/* ============================================================
-   HERO INFO-BAR — layout colonne automatique ≤ 1500px
-   Quand les 4 blocs ne tiennent pas en ligne, ils s'empilent
-   (label gauche / valeur droite) comme sur mobile.
-   ============================================================ */
-@media screen and (max-width: 1500px) {
-  .info-blocks {
-    flex-direction: column !important;
-    flex-wrap: nowrap !important;
-    gap: 0 !important;
-    align-items: stretch !important;
-    width: 100%;
-  }
-  .blocks-container,
-  .blocks-container2,
-  .blocks-container4 {
-    min-width: 0 !important;
-    max-width: 100% !important;
-    flex: unset !important;
-    width: 100% !important;
-    align-items: stretch !important;
-    padding: 6px 0 !important;
-    border-bottom: 1px solid rgba(255,255,255,0.18) !important;
-  }
-  .left,
-  .center,
-  .right {
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    width: 100% !important;
-    gap: 12px !important;
-    text-align: unset !important;
-  }
-  .pframer-text4,
-  .pframer-text6,
-  .pframer-text9,
-  .pframer-text10 {
-    align-items: flex-end !important;
-  }
-  .acres, .cottage, .for-sale {
-    font-size: clamp(20px, 2.8vw, 36px) !important;
-    line-height: 1.15 !important;
-    height: auto !important;
-    white-space: nowrap;
-  }
-}
