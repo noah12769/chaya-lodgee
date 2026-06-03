@@ -61,32 +61,33 @@
   flex-shrink: 0;
 }
 .hero {
-  height: 1200px;
+  width: 100%;
+  min-width: 100%;
+  height: 100vh;
+  min-height: 640px;
   flex-direction: column;
   align-items: center;
   padding: 160px var(--padding-20) var(--padding-24);
   box-sizing: border-box;
   position: relative;
   isolation: isolate;
-  min-height: var(--height-640);
   text-align: center;
   font-size: var(--font-size-88);
   color: var(--token-efa18e95-39b2-42bc-9291-825bdbc6e4ca);
   font-family: var(--font-family-Font-1);
 }
 .top-big {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   margin: 0 !important;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  align-items: flex-start;
+  align-items: stretch;
   z-index: 0;
 }
 .image-icon {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -4156,3 +4157,31 @@ html, body {
 .background, .background2, .background3, .background14 {
   pointer-events: none !important;
 }
+
+/* ── Styles partagés nav + logo (index.html et reservation.html) ─────── */
+.site-logo-img {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+.nav-logo-wrap {
+  display: flex;
+  align-items: center;
+}
+.nav-in-hero .nav-logo-wrap {
+  filter: none;
+}
+.nav-logo-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #111;
+  transition: color 0.4s ease;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.nav-in-hero .nav-logo-text { color: rgba(255,255,255,0.9); }
