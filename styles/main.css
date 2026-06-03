@@ -4185,3 +4185,110 @@ html, body {
   pointer-events: none;
 }
 .nav-in-hero .nav-logo-text { color: rgba(255,255,255,0.9); }
+
+/* ============================================================
+   IPAD FIX — galerie pleine largeur + cartes contact égales
+   Cible : 769px–1350px (iPad portrait / paysage, surface pro…)
+   ============================================================ */
+@media screen and (min-width: 769px) and (max-width: 1350px) {
+
+  /* ── GALERIE : rangées d'images pleine largeur ── */
+
+  /* Conteneurs de rangée → colonne pleine largeur */
+  .images > .home-default {
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  /* Grande image carrée dans la rangée → pleine largeur, hauteur fixe */
+  .images > .home-default > .default {
+    width: 100%;
+    min-width: unset;
+    height: 440px;
+    flex: none;
+  }
+
+  /* Image paysage dans la rangée → pleine largeur */
+  .images > .home-default > .default-icon2 {
+    width: 100%;
+    height: 380px;
+    flex: none;
+  }
+
+  /* Images absolues dans .default : couvrir tout le conteneur */
+  .images .image-icon3,
+  .images .image-icon6 {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    object-fit: cover;
+  }
+
+  /* Conteneur de la double rangée → colonne pleine largeur */
+  .images > .images2 {
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  /* Deux petites images côte à côte dans displayed-images */
+  .images2 > .displayed-images {
+    width: 100%;
+  }
+  .images2 .default2 {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    height: 300px;
+  }
+
+  /* Images absolues dans .default2 : couvrir tout le conteneur */
+  .images .image-icon4,
+  .images .image-icon5 {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    object-fit: cover;
+  }
+
+  /* Grande image pleine largeur après displayed-images */
+  .images2 > .default-icon3 {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+  }
+
+  /* ── CONTACT : deux cartes à égale hauteur côte à côte ── */
+
+  /* Force les deux contact-block côte à côte sans retour à la ligne */
+  .contact-info > .home-default {
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+  }
+
+  /* Supprime le min-width rigide qui empêche les cartes de passer côte à côte */
+  .contact-info .contact-block-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .contact-info .label-h3 {
+    min-width: 0;
+    width: 100%;
+  }
+  .contact-info .contact-block {
+    min-width: 0;
+  }
+}
