@@ -65,16 +65,11 @@
   min-width: 100%;
   height: 100vh;
   height: 100svh;
-  height: 100dvh; /* hauteur dynamique — s'adapte quand la barre Safari apparaît/disparaît */
+  height: 100dvh;
   min-height: 640px;
   flex-direction: column;
   align-items: center;
   padding: clamp(68px, 12vh, 160px) var(--padding-20) var(--padding-24);
-  background-color: #111;
-  background-image: url('../assets/images/photo-05.jpg'); /* fallback CSS natif, toujours fiable */
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
   box-sizing: border-box;
   position: relative;
   isolation: isolate;
@@ -85,10 +80,7 @@
 }
 .top-big {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   margin: 0 !important;
@@ -97,10 +89,7 @@
 }
 .image-icon {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
