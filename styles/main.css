@@ -4342,10 +4342,9 @@ html, body {
    RESPONSIVE TOUS APPAREILS — 344px → 1920px (2026-06)
    ═══════════════════════════════════════════════════════════════ */
 
-/* Fond sombre global + iOS overscroll */
+/* Fond sombre global */
 html, body {
   background: #111;
-  overscroll-behavior-y: none;
 }
 
 /* iOS notch / Dynamic Island / home indicator */
