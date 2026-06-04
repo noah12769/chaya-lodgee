@@ -4337,3 +4337,305 @@ html, body {
     margin-top: 16px !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   BREAKPOINTS COMPLETS + iOS SAFE AREA (Noah, 2026-06)
+   Cible : tous écrans de 320px à 1920px
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── fond global sombre pour zones safe-area iOS ── */
+html, body {
+  background: #111;
+}
+
+/* ── iOS Safe Area : notch + home indicator ──────────────────── */
+@supports (padding: env(safe-area-inset-top)) {
+  /* Nav : espace sous le notch / barre de statut */
+  .nav-bar {
+    padding-top: max(23.8px, env(safe-area-inset-top)) !important;
+    box-sizing: border-box !important;
+  }
+  /* Hero : espace au-dessus du home indicator */
+  .hero {
+    padding-bottom: max(var(--padding-24), env(safe-area-inset-bottom)) !important;
+    box-sizing: border-box !important;
+  }
+  /* Mobile menu dropdown : aligne sous le notch */
+  @media screen and (max-width: 768px) {
+    .mobile-menu {
+      top: calc(100% + env(safe-area-inset-top, 0px));
+    }
+  }
+}
+
+/* ── container-hero-content : peut rétrécir sur petit écran ─── */
+@media screen and (max-width: 768px) {
+  .container-hero-content {
+    flex-shrink: 1 !important;
+    min-height: 0 !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   BREAKPOINT : Tablet Landscape — 993px–1024px
+   (entre les règles existantes 925px et 1350px)
+   ══════════════════════════════════════════════════════════════ */
+@media screen and (min-width: 993px) and (max-width: 1024px) {
+  .features-info {
+    grid-template-columns: repeat(2, minmax(300px, 1fr)) !important;
+  }
+  .container-location-content {
+    gap: 40px;
+  }
+  .nav-bar {
+    padding-left: var(--padding-40);
+    padding-right: var(--padding-40);
+    box-sizing: border-box;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   BREAKPOINT : Large Mobile — ≤576px
+   (entre mobile 768px et small 450px)
+   ══════════════════════════════════════════════════════════════ */
+@media screen and (max-width: 576px) {
+  /* Hero h1 */
+  .willow-creek-road,
+  .cold-spring-ny {
+    font-size: clamp(26px, 7.5vw, 32px) !important;
+    line-height: 1.12 !important;
+  }
+  /* Badges */
+  .transparent {
+    padding: 10px 16px !important;
+    gap: 6px !important;
+  }
+  .component-1 {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .divider-icon {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .sf {
+    font-size: 11px !important;
+    line-height: 1.25 !important;
+  }
+  .icon-blocks {
+    gap: 8px !important;
+    margin-top: 12px !important;
+  }
+  /* Info bar */
+  .acres, .cottage, .for-sale {
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+  }
+  .property-type, .lot-size {
+    font-size: 10px !important;
+    letter-spacing: 0.3px !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   BREAKPOINT : Mobile — ≤480px
+   ══════════════════════════════════════════════════════════════ */
+@media screen and (max-width: 480px) {
+  /* Hero h1 */
+  .willow-creek-road,
+  .cold-spring-ny {
+    font-size: clamp(22px, 6.5vw, 28px) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.8px !important;
+  }
+
+  /* Icon blocks : passe en LIGNE HORIZONTALE pour économiser de la hauteur */
+  .icon-blocks {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    margin-top: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .icon-blocks .container-div {
+    flex: 1 !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    width: auto !important;
+    padding: 0 !important;
+  }
+  .transparent {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 8px 4px !important;
+    gap: 4px !important;
+    width: 100% !important;
+    border-radius: 14px !important;
+  }
+  .component-1 {
+    width: 18px !important;
+    height: 18px !important;
+    flex-shrink: 0 !important;
+  }
+  .divider-icon {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  .sf {
+    font-size: 9px !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Info bar */
+  .blocks-container,
+  .blocks-container2,
+  .blocks-container4 {
+    padding: 4px 0 !important;
+  }
+  .acres, .cottage, .for-sale {
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+  }
+  .property-type, .lot-size {
+    font-size: 10px !important;
+    letter-spacing: 0.25px !important;
+  }
+
+  /* Galerie + autres sections */
+  .gallery {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  .banner-content {
+    padding: 20px 14px !important;
+  }
+  .contact-block {
+    padding: 20px 16px !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   BREAKPOINT : Small Mobile — ≤375px (iPhone SE 3rd, standard)
+   ══════════════════════════════════════════════════════════════ */
+@media screen and (max-width: 375px) {
+  /* Hero h1 */
+  .willow-creek-road,
+  .cold-spring-ny {
+    font-size: 20px !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.5px !important;
+  }
+
+  /* Icon blocks */
+  .icon-blocks {
+    gap: 4px !important;
+    margin-top: 8px !important;
+  }
+  .transparent {
+    padding: 6px 3px !important;
+    gap: 3px !important;
+  }
+  .component-1 {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  .divider-icon {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  .sf {
+    font-size: 8px !important;
+  }
+
+  /* Info bar */
+  .blocks-container,
+  .blocks-container2,
+  .blocks-container4 {
+    padding: 3px 0 !important;
+  }
+  .acres, .cottage, .for-sale {
+    font-size: 11px !important;
+  }
+  .property-type, .lot-size {
+    font-size: 9px !important;
+    letter-spacing: 0.2px !important;
+  }
+
+  /* Sections générales */
+  .contact-block {
+    padding: 16px 12px !important;
+  }
+  .black,
+  .black2,
+  .black6 {
+    padding: 20px 10px !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   BREAKPOINT : Extra Small Mobile — ≤320px (iPhone SE 1st gen)
+   ══════════════════════════════════════════════════════════════ */
+@media screen and (max-width: 320px) {
+  /* Hero h1 */
+  .willow-creek-road,
+  .cold-spring-ny {
+    font-size: 17px !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.3px !important;
+  }
+
+  /* Icon blocks */
+  .icon-blocks {
+    gap: 3px !important;
+    margin-top: 6px !important;
+  }
+  .transparent {
+    padding: 5px 2px !important;
+    gap: 2px !important;
+    border-radius: 10px !important;
+  }
+  .component-1 {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .divider-icon {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .sf {
+    font-size: 7px !important;
+    line-height: 1.1 !important;
+  }
+
+  /* Info bar */
+  .blocks-container,
+  .blocks-container2,
+  .blocks-container4 {
+    padding: 2px 0 !important;
+  }
+  .acres, .cottage, .for-sale {
+    font-size: 10px !important;
+  }
+  .property-type, .lot-size {
+    font-size: 8px !important;
+    letter-spacing: 0.1px !important;
+  }
+
+  /* Galerie */
+  .gallery {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  /* Contact */
+  .contact-block {
+    padding: 12px 10px !important;
+  }
+}
