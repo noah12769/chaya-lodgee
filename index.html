@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- ═══════════════════════════════════════════════════════════
          SEO — Titre & Description
@@ -138,8 +138,8 @@
     }
     </script>
 
-    <link rel="stylesheet" href="./styles/global.css?v=20260603-13" />
-    <link rel="stylesheet" href="./styles/main.css?v=20260603-13" />
+    <link rel="stylesheet" href="./styles/global.css?v=20260603-9" />
+    <link rel="stylesheet" href="./styles/main.css?v=20260603-9" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap"
@@ -149,9 +149,6 @@
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap"
     />
   <style>
-    /* Fond sombre pour les zones safe-area iOS (bandes noires, pas blanches) */
-    html, body { background: #111; }
-
     /* Hero title: 3 lines, centré, grand format lisible */
     .h1framer-text {
       display: flex !important;
@@ -167,9 +164,9 @@
       min-height: 0 !important;
       margin: 0 !important;
       width: 100% !important;
-      font-size: clamp(56px, 9vw, 108px); /* sans !important → les media queries CSS l'écrasent */
-      line-height: 1;                     /* idem */
-      letter-spacing: -0.02em;            /* idem */
+      font-size: clamp(56px, 9vw, 108px) !important;
+      line-height: 1 !important;
+      letter-spacing: -0.02em !important;
       text-transform: uppercase !important;
       font-weight: 400 !important;
       color: white !important;
