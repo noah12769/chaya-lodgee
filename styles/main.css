@@ -4866,3 +4866,39 @@ html, body {
     padding: 4px 0 !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   REVERT glass info-blocks (Noah, 2026-06)
+   Garde le fix font-size, annule la fusion glass sur les rangées.
+   ═══════════════════════════════════════════════════════════════ */
+@media screen and (max-width: 768px) {
+  .info-blocks {
+    background: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-top: 0 !important;
+  }
+  .blocks-container,
+  .blocks-container2 {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+    padding: 6px 0 !important;
+  }
+  .blocks-container4 {
+    border-bottom: none !important;
+    padding: 6px 0 !important;
+  }
+  .property-type, .lot-size {
+    color: inherit !important;
+    font-size: var(--item-spacing-12) !important;
+    letter-spacing: var(--letter-spacing-0-48) !important;
+  }
+  .cottage, .acres, .for-sale {
+    color: white !important;
+    font-size: 15px !important;
+    line-height: 1.25 !important;
+  }
+}
