@@ -138,8 +138,8 @@
     }
     </script>
 
-    <link rel="stylesheet" href="./styles/global.css?v=20260603-11" />
-    <link rel="stylesheet" href="./styles/main.css?v=20260603-11" />
+    <link rel="stylesheet" href="./styles/global.css?v=20260603-12" />
+    <link rel="stylesheet" href="./styles/main.css?v=20260603-12" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap"
@@ -167,9 +167,9 @@
       min-height: 0 !important;
       margin: 0 !important;
       width: 100% !important;
-      font-size: clamp(56px, 9vw, 108px) !important;
-      line-height: 1 !important;
-      letter-spacing: -0.02em !important;
+      font-size: clamp(56px, 9vw, 108px); /* sans !important → les media queries CSS l'écrasent */
+      line-height: 1;                     /* idem */
+      letter-spacing: -0.02em;            /* idem */
       text-transform: uppercase !important;
       font-weight: 400 !important;
       color: white !important;

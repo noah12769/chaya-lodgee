@@ -4746,3 +4746,123 @@ html, body {
     padding-bottom: 0 !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO FINAL PASS — font-size mobile + unification glass style
+   (Noah, 2026-06)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── 1. FONT-SIZE hero — overrides l'inline style (sans !important)
+   L'inline style n'a plus !important sur font-size/line-height →
+   ces règles externes avec !important gagnent désormais.           ── */
+
+/* Tablet portrait + grand mobile : 577–768px */
+@media screen and (max-width: 768px) {
+  .willow-creek-road,
+  .cold-spring-ny {
+    font-size: clamp(24px, 7vw, 38px) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -1.5px !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+}
+
+/* Large mobile : ≤576px — déjà défini plus haut avec !important, renforcé */
+@media screen and (max-width: 576px) {
+  .willow-creek-road,
+  .cold-spring-ny {
+    font-size: clamp(22px, 7.5vw, 30px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -1px !important;
+  }
+}
+
+/* Mobile : ≤480px */
+@media screen and (max-width: 480px) {
+  .willow-creek-road,
+  .cold-spring-ny {
+    font-size: clamp(20px, 6.5vw, 26px) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.8px !important;
+  }
+}
+
+/* Small mobile : ≤375px */
+@media screen and (max-width: 375px) {
+  .willow-creek-road,
+  .cold-spring-ny {
+    font-size: 20px !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.5px !important;
+  }
+}
+
+/* Extra small : ≤320px */
+@media screen and (max-width: 320px) {
+  .willow-creek-road,
+  .cold-spring-ny {
+    font-size: 17px !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.3px !important;
+  }
+}
+
+/* ── 2. UNIFICATION GLASS STYLE — hero pills + info rows
+   Les 3 badges et les 4 rangées info partagent maintenant
+   le même langage visuel "frosted glass".                          ── */
+
+/* Info-blocks : glass card (comme les pill badges) */
+@media screen and (max-width: 768px) {
+  .info-blocks {
+    background: rgba(255, 255, 255, 0.06) !important;
+    backdrop-filter: blur(7px) !important;
+    -webkit-backdrop-filter: blur(7px) !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0px 1px 1px rgba(255,255,255,0.25) inset, 0px 8px 16px rgba(0,0,0,0.06) !important;
+    padding: 2px 14px !important;
+    margin-top: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    gap: 0 !important;
+  }
+  /* Séparateurs internes discrets (remplace les borders existantes) */
+  .blocks-container,
+  .blocks-container2 {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10) !important;
+    padding: 5px 0 !important;
+  }
+  .blocks-container4 {
+    border-bottom: none !important;
+    padding: 5px 0 !important;
+  }
+  /* Alignement label / valeur */
+  .property-type, .lot-size {
+    color: rgba(255, 255, 255, 0.55) !important;
+    font-size: 9px !important;
+    letter-spacing: 0.5px !important;
+  }
+  .cottage, .acres, .for-sale {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* ── 3. Compact hero content pour éviter le clipping ── */
+@media screen and (max-width: 576px) {
+  .container-hero-content {
+    gap: 8px !important;
+  }
+  .info-blocks {
+    padding: 0 12px !important;
+  }
+  .blocks-container,
+  .blocks-container2 {
+    padding: 4px 0 !important;
+  }
+  .blocks-container4 {
+    padding: 4px 0 !important;
+  }
+}
