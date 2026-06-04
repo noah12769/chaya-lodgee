@@ -138,8 +138,8 @@
     }
     </script>
 
-    <link rel="stylesheet" href="./styles/global.css?v=20260604-4" />
-    <link rel="stylesheet" href="./styles/main.css?v=20260604-4" />
+    <link rel="stylesheet" href="./styles/global.css?v=20260604-5" />
+    <link rel="stylesheet" href="./styles/main.css?v=20260604-5" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap"
@@ -169,7 +169,7 @@
       width: 100% !important;
       /* 9vw fluide sur TOUS les écrans — min 24px (pas 56px)
          344px→31px  375px→34px  430px→39px  768px→69px  1440px→108px */
-      font-size: clamp(24px, 9vw, 108px) !important;
+      font-size: clamp(24px, 9vw, 108px); /* sans !important → CSS externe !important peut l'écraser */
       line-height: 0.95 !important;
       letter-spacing: -0.03em !important;
       text-transform: uppercase !important;
@@ -1673,10 +1673,10 @@
         function setHeroHeight() {
           if (!hero) return;
           var h = window.innerHeight;
-          var w = window.innerWidth;
+          // Annule TOUJOURS min-height:640px du CSS
+          // Sans ça, iPhone SE (568px) → hero forcé à 640px → info-blocks invisibles
+          hero.style.minHeight = '0px';
           hero.style.height = h + 'px';
-          // Paysage mobile : désactive min-height:640px CSS
-          hero.style.minHeight = (h < w && w <= 1024) ? '0px' : '';
         }
         setHeroHeight();
         window.addEventListener('resize', setHeroHeight, { passive: true });

@@ -4442,3 +4442,73 @@ html, body, .w-light, .end-of-bodystart {
   .cottage, .acres, .for-sale { font-size: 11px !important; }
   .property-type, .lot-size { font-size: 9px !important; }
 }
+
+/* ── iPad Mini (768px) : forcer layout tablette, pas mobile ── */
+@media screen and (min-width: 768px) {
+  .icon-blocks {
+    flex-direction: row !important;
+    width: 624px !important;
+    max-width: var(--width-624) !important;
+    justify-content: center !important;
+    gap: var(--item-spacing-12) !important;
+  }
+  .icon-blocks .container-div {
+    width: auto !important;
+    flex: unset !important;
+    padding: 0 !important;
+  }
+  .transparent {
+    width: 200px !important;
+    border-radius: var(--br-1000) !important;
+    flex-direction: column !important;
+    padding: var(--padding-20) var(--padding-24) !important;
+    gap: var(--item-spacing-10) !important;
+  }
+  .component-1 {
+    width: var(--width-24) !important;
+    height: var(--height-24) !important;
+  }
+  .divider-icon {
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important; left: 0 !important;
+    right: 0 !important; bottom: 0 !important;
+  }
+  .sf {
+    font-size: var(--font-size-16) !important;
+    line-height: 21.8px !important;
+    text-align: center !important;
+  }
+  .menu-items2, .contact-button { display: flex !important; }
+  .hamburger-btn { display: none !important; }
+  .info-blocks {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: clamp(8px, 2vw, 24px) !important;
+  }
+  .blocks-container, .blocks-container2, .blocks-container4 {
+    flex: 1 !important;
+    width: auto !important;
+    padding: 0 !important;
+    border-bottom: none !important;
+  }
+  .left, .center, .right {
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    gap: var(--item-spacing-5) !important;
+  }
+  .cottage, .acres, .for-sale {
+    font-size: clamp(14px, 2.8vw, 40px) !important;
+    line-height: var(--line-height-38-4) !important;
+    text-align: left !important;
+    color: white !important;
+    height: auto !important;
+  }
+  .property-type, .lot-size {
+    font-size: var(--item-spacing-12) !important;
+    letter-spacing: var(--letter-spacing-0-48) !important;
+    color: inherit !important;
+  }
+}
