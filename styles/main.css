@@ -4337,3 +4337,220 @@ html, body {
     margin-top: 16px !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   MOBILE-FIRST — BREAKPOINT UNIQUE 767px (2026-06)
+   Portrait + paysage, 320px → 767px.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Fond global sombre : pas de flash blanc au chargement */
+html, body {
+  background: #111;
+  overscroll-behavior-y: none;
+}
+
+/* iOS notch / Dynamic Island / home indicator */
+@supports (padding: env(safe-area-inset-top)) {
+  .nav-bar {
+    padding-top: max(23.8px, env(safe-area-inset-top)) !important;
+    box-sizing: border-box !important;
+  }
+  .hero {
+    padding-bottom: max(var(--padding-24), env(safe-area-inset-bottom)) !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   MOBILE UNIQUEMENT : max-width 767px
+   ───────────────────────────────────────────────────────────────── */
+@media screen and (max-width: 767px) {
+
+  /* Zéro overflow horizontal sur toute la page */
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body,
+  .w-light,
+  .end-of-bodystart {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+
+  /* ── HERO ── */
+  .container-hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex-shrink: 1 !important;
+    gap: clamp(10px, 3vh, 24px) !important;
+  }
+  .hero-offer {
+    width: 100% !important;
+    align-items: center !important;
+    gap: clamp(8px, 2vh, 20px) !important;
+  }
+
+  /* Titre : font-size géré par clamp(24px,9vw,108px) dans l'inline style
+     Ici on garantit juste que le texte ne déborde pas */
+  .h1framer-text {
+    width: 100% !important;
+    padding: clamp(12px, 3vh, 24px) 20px 0 !important;
+    box-sizing: border-box !important;
+    align-items: center !important;
+  }
+  .willow-creek-road,
+  .cold-spring-ny {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  /* ── BADGES (Studio / 1 Chambre / Vue Mer) : LIGNE HORIZONTALE ── */
+  .icon-blocks {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    margin-top: clamp(10px, 3vh, 24px) !important;
+    padding: 0 !important;
+  }
+  .icon-blocks .container-div {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  .transparent {
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 8px 4px !important;
+    gap: 4px !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
+  }
+  .component-1 {
+    width: 18px !important;
+    height: 18px !important;
+    flex-shrink: 0 !important;
+  }
+  .divider-icon {
+    width: 18px !important;
+    height: 18px !important;
+    position: relative !important;
+    top: auto !important; left: auto !important;
+    right: auto !important; bottom: auto !important;
+  }
+  .sf {
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+
+  /* ── INFO BLOCKS (Type/Quartier/Décoration/Courte Durée) ── */
+  .info-blocks {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+  .blocks-container,
+  .blocks-container2,
+  .blocks-container4 {
+    flex: unset !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+    padding: 4px 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.12) !important;
+  }
+  .blocks-container4 {
+    border-bottom: none !important;
+  }
+  .left, .center, .right {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 8px !important;
+    text-align: unset !important;
+  }
+  .property-type,
+  .lot-size {
+    font-size: 10px !important;
+    letter-spacing: 0.4px !important;
+    color: rgba(255,255,255,0.55) !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+  .cottage, .acres, .for-sale {
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+    color: rgba(255,255,255,0.95) !important;
+    text-align: right !important;
+    white-space: nowrap !important;
+    height: auto !important;
+  }
+  .pframer-text4,
+  .pframer-text6,
+  .pframer-text9,
+  .pframer-text10 {
+    align-items: flex-end !important;
+    font-size: 13px !important;
+  }
+
+  /* ── NAV ── */
+  .menu-items2, .contact-button { display: none !important; }
+  .hamburger-btn { display: flex !important; }
+  .nav-bar {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   PAYSAGE MOBILE : hauteur réduite ~360px
+   ───────────────────────────────────────────────────────────────── */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  .hero {
+    min-height: 0 !important;
+    padding-top: 48px !important;
+  }
+  /* Font basée sur la hauteur en paysage */
+  .willow-creek-road,
+  .cold-spring-ny {
+    font-size: clamp(13px, 4.5vh, 20px) !important;
+    line-height: 1 !important;
+  }
+  .h1framer-text {
+    padding: 4px 16px 0 !important;
+  }
+  .icon-blocks {
+    gap: 4px !important;
+    margin-top: 4px !important;
+  }
+  .transparent { padding: 5px 3px !important; gap: 2px !important; }
+  .component-1 { width: 14px !important; height: 14px !important; }
+  .divider-icon { width: 14px !important; height: 14px !important; }
+  .sf { font-size: 8px !important; }
+  .hero-offer { gap: 4px !important; }
+  .container-hero-content { gap: 6px !important; }
+  .blocks-container, .blocks-container2, .blocks-container4 {
+    padding: 2px 0 !important;
+  }
+  .cottage, .acres, .for-sale { font-size: 11px !important; }
+  .property-type, .lot-size { font-size: 9px !important; }
+}
