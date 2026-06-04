@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- ═══════════════════════════════════════════════════════════
          SEO — Titre & Description
@@ -138,8 +138,8 @@
     }
     </script>
 
-    <link rel="stylesheet" href="./styles/global.css?v=20260604-2" />
-    <link rel="stylesheet" href="./styles/main.css?v=20260604-2" />
+    <link rel="stylesheet" href="./styles/global.css?v=20260603-9" />
+    <link rel="stylesheet" href="./styles/main.css?v=20260603-9" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap"
@@ -149,17 +149,14 @@
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap"
     />
   <style>
-    /* Fond sombre : élimine les bandes blanches iOS/Android (safe-area, overscroll) */
-    html, body { background: #111; margin: 0; }
-
-    /* Hero title : responsive pur — 9vw s'adapte à TOUTE taille d'écran */
+    /* Hero title: 3 lines, centré, grand format lisible */
     .h1framer-text {
       display: flex !important;
       flex-direction: column !important;
       align-items: center !important;
       gap: 0 !important;
       width: 100% !important;
-      padding: 20px 20px 0 !important;
+      padding: 20px 16px 0 !important;
       box-sizing: border-box !important;
     }
     .willow-creek-road {
@@ -167,11 +164,9 @@
       min-height: 0 !important;
       margin: 0 !important;
       width: 100% !important;
-      /* clamp(24px…) : min réduit pour que 9vw s'applique sur mobile
-         320px→28.8px / 375px→33.7px / 768px→69px / 1440px→108px    */
-      font-size: clamp(24px, 9vw, 108px) !important;
-      line-height: 0.95 !important;
-      letter-spacing: -0.03em !important;
+      font-size: clamp(56px, 9vw, 108px) !important;
+      line-height: 1 !important;
+      letter-spacing: -0.02em !important;
       text-transform: uppercase !important;
       font-weight: 400 !important;
       color: white !important;
@@ -1667,20 +1662,17 @@
   </div>
 
     <script>
-      // ── Hero height : vraie zone visible sur iOS et Android ──────────
-      // window.innerHeight = hauteur entre les barres navigateur.
-      // Paysage mobile : on annule aussi le min-height:640px CSS.
+      // ── iOS Safari : fix hauteur hero (window.innerHeight) ─────────
+      // Sur iPhone, 100dvh/100svh est calculé incorrectement au premier
+      // rendu à cause de la barre d'adresse Safari. Cette fonction force
+      // la vraie hauteur visible via window.innerHeight.
       (function() {
         var hero = document.querySelector('.hero');
-        function setHeroHeight() {
-          if (!hero) return;
-          var h = window.innerHeight;
-          var w = window.innerWidth;
-          hero.style.height = h + 'px';
-          hero.style.minHeight = (h < w && w <= 1024) ? '0px' : '';
+        function fixHeroHeight() {
+          if (hero) hero.style.height = window.innerHeight + 'px';
         }
-        setHeroHeight();
-        window.addEventListener('resize', setHeroHeight, { passive: true });
+        fixHeroHeight();
+        window.addEventListener('resize', fixHeroHeight, { passive: true });
       })();
     </script>
     <script>
