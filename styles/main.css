@@ -4639,3 +4639,110 @@ html, body {
     padding: 12px 10px !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE LANDSCAPE FIX (Noah, 2026-06)
+   Cible : smartphones en mode paysage (hauteur ≤ 500px)
+   Problème : min-height:640px → hero = 640px mais viewport = ~360px
+   → titre visible, badges + info-blocks hors du fold
+   ═══════════════════════════════════════════════════════════════ */
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+
+  /* Annule le min-height qui force le hero à 640px */
+  .hero {
+    min-height: 0 !important;
+    /* height reste géré par le JS (window.innerHeight) */
+    padding-top: 50px !important;
+    padding-bottom: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Titre : taille basée sur la hauteur viewport */
+  .willow-creek-road,
+  .cold-spring-ny {
+    font-size: clamp(14px, 5vh, 24px) !important;
+    line-height: 1 !important;
+    letter-spacing: -0.3px !important;
+  }
+
+  /* h1framer-text : padding minimal */
+  .h1framer-text {
+    padding: 4px 12px 0 !important;
+  }
+
+  /* Icon blocks : TOUJOURS horizontal en paysage */
+  .icon-blocks {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    margin-top: 6px !important;
+  }
+  .icon-blocks .container-div {
+    flex: 1 !important;
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  .transparent {
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 5px 4px !important;
+    gap: 2px !important;
+    border-radius: 10px !important;
+  }
+  .component-1 {
+    width: 14px !important;
+    height: 14px !important;
+    flex-shrink: 0 !important;
+  }
+  .divider-icon {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .sf {
+    font-size: 8px !important;
+    line-height: 1.1 !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  /* Gap entre titre et icônes */
+  .hero-offer {
+    gap: 4px !important;
+  }
+
+  /* Info blocks : 4 rangées ultra-compactes */
+  .info-blocks {
+    gap: 0 !important;
+    width: 100% !important;
+  }
+  .blocks-container,
+  .blocks-container2,
+  .blocks-container4 {
+    padding: 2px 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+  }
+  .acres, .cottage, .for-sale {
+    font-size: 10px !important;
+    line-height: 1.1 !important;
+  }
+  .property-type, .lot-size {
+    font-size: 8px !important;
+    letter-spacing: 0.15px !important;
+    line-height: 1.1 !important;
+  }
+
+  /* Nav : compacte en paysage */
+  .nav-bar {
+    padding-top: 10px !important;
+    padding-bottom: 0 !important;
+  }
+}
