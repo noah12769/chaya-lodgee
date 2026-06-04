@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
     <!-- ═══════════════════════════════════════════════════════════
          SEO — Titre & Description
@@ -138,8 +138,8 @@
     }
     </script>
 
-    <link rel="stylesheet" href="./styles/global.css?v=20260603-9" />
-    <link rel="stylesheet" href="./styles/main.css?v=20260603-9" />
+    <link rel="stylesheet" href="./styles/global.css?v=20260604-1" />
+    <link rel="stylesheet" href="./styles/main.css?v=20260604-1" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap"
@@ -149,6 +149,9 @@
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap"
     />
   <style>
+    /* Fond sombre = pas de bandes blanches sur iOS/Android (overscroll + safe-areas) */
+    html, body { background: #111; margin: 0; }
+
     /* Hero title: 3 lines, centré, grand format lisible */
     .h1framer-text {
       display: flex !important;
@@ -164,9 +167,10 @@
       min-height: 0 !important;
       margin: 0 !important;
       width: 100% !important;
-      font-size: clamp(56px, 9vw, 108px) !important;
-      line-height: 1 !important;
-      letter-spacing: -0.02em !important;
+      /* Sans !important sur typo → les media-queries externes avec !important gagnent sur mobile */
+      font-size: clamp(56px, 9vw, 108px);
+      line-height: 1;
+      letter-spacing: -0.02em;
       text-transform: uppercase !important;
       font-weight: 400 !important;
       color: white !important;
@@ -1662,17 +1666,23 @@
   </div>
 
     <script>
-      // ── iOS Safari : fix hauteur hero (window.innerHeight) ─────────
-      // Sur iPhone, 100dvh/100svh est calculé incorrectement au premier
-      // rendu à cause de la barre d'adresse Safari. Cette fonction force
-      // la vraie hauteur visible via window.innerHeight.
+      // ── Hero height : adapte à la vraie zone visible sur iOS/Android ──
+      // Problème : 100dvh/100svh mal calculé à cause des barres navigateur.
+      // window.innerHeight = hauteur visible réelle (entre les barres).
+      // En paysage mobile : on annule aussi le min-height CSS (640px)
+      // qui forcerait le hero à 640px alors que l'écran fait ~360px.
       (function() {
         var hero = document.querySelector('.hero');
-        function fixHeroHeight() {
-          if (hero) hero.style.height = window.innerHeight + 'px';
+        function setHeroHeight() {
+          if (!hero) return;
+          var h = window.innerHeight;
+          var w = window.innerWidth;
+          hero.style.height = h + 'px';
+          // Paysage sur petit écran : désactiver min-height pour éviter le débordement
+          hero.style.minHeight = (h < w && w <= 1024) ? '0px' : '';
         }
-        fixHeroHeight();
-        window.addEventListener('resize', fixHeroHeight, { passive: true });
+        setHeroHeight();
+        window.addEventListener('resize', setHeroHeight, { passive: true });
       })();
     </script>
     <script>
