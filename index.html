@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
     <!-- ═══════════════════════════════════════════════════════════
          SEO — Titre & Description
@@ -138,8 +138,8 @@
     }
     </script>
 
-    <link rel="stylesheet" href="./styles/global.css?v=20260603-9" />
-    <link rel="stylesheet" href="./styles/main.css?v=20260603-9" />
+    <link rel="stylesheet" href="./styles/global.css?v=20260604-3" />
+    <link rel="stylesheet" href="./styles/main.css?v=20260604-3" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap"
@@ -149,14 +149,17 @@
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap"
     />
   <style>
-    /* Hero title: 3 lines, centré, grand format lisible */
+    /* Fond sombre global — élimine les bandes blanches iOS/Android */
+    html, body { background: #111; margin: 0; }
+
+    /* Hero title */
     .h1framer-text {
       display: flex !important;
       flex-direction: column !important;
       align-items: center !important;
       gap: 0 !important;
       width: 100% !important;
-      padding: 20px 16px 0 !important;
+      padding: 20px 20px 0 !important;
       box-sizing: border-box !important;
     }
     .willow-creek-road {
@@ -164,9 +167,11 @@
       min-height: 0 !important;
       margin: 0 !important;
       width: 100% !important;
-      font-size: clamp(56px, 9vw, 108px) !important;
-      line-height: 1 !important;
-      letter-spacing: -0.02em !important;
+      /* 9vw fluide sur TOUS les écrans — min 24px (pas 56px)
+         344px→31px  375px→34px  430px→39px  768px→69px  1440px→108px */
+      font-size: clamp(24px, 9vw, 108px) !important;
+      line-height: 0.95 !important;
+      letter-spacing: -0.03em !important;
       text-transform: uppercase !important;
       font-weight: 400 !important;
       color: white !important;
@@ -1662,17 +1667,19 @@
   </div>
 
     <script>
-      // ── iOS Safari : fix hauteur hero (window.innerHeight) ─────────
-      // Sur iPhone, 100dvh/100svh est calculé incorrectement au premier
-      // rendu à cause de la barre d'adresse Safari. Cette fonction force
-      // la vraie hauteur visible via window.innerHeight.
+      // ── Hero height : vraie zone visible (iOS + Android) ─────────────
       (function() {
         var hero = document.querySelector('.hero');
-        function fixHeroHeight() {
-          if (hero) hero.style.height = window.innerHeight + 'px';
+        function setHeroHeight() {
+          if (!hero) return;
+          var h = window.innerHeight;
+          var w = window.innerWidth;
+          hero.style.height = h + 'px';
+          // Paysage mobile : désactive min-height:640px CSS
+          hero.style.minHeight = (h < w && w <= 1024) ? '0px' : '';
         }
-        fixHeroHeight();
-        window.addEventListener('resize', fixHeroHeight, { passive: true });
+        setHeroHeight();
+        window.addEventListener('resize', setHeroHeight, { passive: true });
       })();
     </script>
     <script>

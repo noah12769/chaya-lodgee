@@ -4337,3 +4337,109 @@ html, body {
     margin-top: 16px !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE TOUS APPAREILS — 344px → 1920px (2026-06)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Fond sombre global + iOS overscroll */
+html, body {
+  background: #111;
+  overscroll-behavior-y: none;
+}
+
+/* iOS notch / Dynamic Island / home indicator */
+@supports (padding: env(safe-area-inset-top)) {
+  .nav-bar {
+    padding-top: max(23.8px, env(safe-area-inset-top)) !important;
+    box-sizing: border-box !important;
+  }
+  .hero {
+    padding-bottom: max(var(--padding-24), env(safe-area-inset-bottom)) !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* ── Zéro overflow horizontal sur toute la page ── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, .w-light, .end-of-bodystart {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
+/* ── container-hero-content : peut rétrécir si besoin ── */
+@media screen and (max-width: 767px) {
+  .container-hero-content {
+    flex-shrink: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  /* Sécurité overflow sur le titre */
+  .willow-creek-road,
+  .cold-spring-ny {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    height: auto !important;
+  }
+  .h1framer-text {
+    width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* ── Paysage mobile (hauteur ≤ 500px) : layout ultra-compact ── */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  .hero { min-height: 0 !important; padding-top: 48px !important; }
+
+  /* Titre basé sur la hauteur en paysage */
+  .willow-creek-road, .cold-spring-ny {
+    font-size: clamp(13px, 4.5vh, 20px) !important;
+    line-height: 1 !important;
+    letter-spacing: -0.3px !important;
+  }
+
+  /* Badges : ligne horizontale pour économiser la hauteur */
+  .icon-blocks {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+    gap: 4px !important;
+    margin-top: 4px !important;
+  }
+  .icon-blocks .container-div {
+    flex: 1 !important;
+    min-width: 0 !important;
+    width: auto !important;
+    padding: 0 !important;
+    max-width: none !important;
+  }
+  .transparent {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 5px 3px !important;
+    gap: 2px !important;
+    width: 100% !important;
+    border-radius: 10px !important;
+  }
+  .component-1 { width: 14px !important; height: 14px !important; }
+  .divider-icon {
+    width: 14px !important; height: 14px !important;
+    position: relative !important;
+    top: auto !important; left: auto !important;
+    right: auto !important; bottom: auto !important;
+  }
+  .sf { font-size: 8px !important; line-height: 1.1 !important; text-align: center !important; }
+  .hero-offer { gap: 4px !important; }
+  .container-hero-content { gap: 4px !important; }
+
+  /* Info blocks compacts */
+  .blocks-container, .blocks-container2, .blocks-container4 {
+    padding: 2px 0 !important;
+  }
+  .cottage, .acres, .for-sale { font-size: 11px !important; }
+  .property-type, .lot-size { font-size: 9px !important; }
+}
