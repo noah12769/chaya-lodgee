@@ -277,56 +277,6 @@
     section, .w-light { max-width: 100%; }
     img { max-width: 100%; }
 
-    @media (max-width: 768px) {
-      /* Location : rectangle 4/3 (main.css met aspect-ratio:1 → override) */
-      .image-wrapper5 {
-        aspect-ratio: 4 / 3 !important;
-        align-items: center !important;
-        justify-content: center !important;
-        min-height: unset !important;
-      }
-      .image-icon10 {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        margin-top: 0 !important;
-      }
-      /* Texte localisation centré */
-      .location-info { align-items: center !important; text-align: center !important; }
-      .left2 { align-items: center !important; text-align: center !important; }
-      .question-label { text-align: center !important; width: 100% !important; }
-      .property-overview { text-align: center !important; }
-
-      /* Contact : cartes pleine largeur, marges égales */
-      .contact-info > .home-default { flex-direction: column !important; align-items: stretch !important; }
-      .contact-block { width: 100% !important; min-width: 0 !important; box-sizing: border-box !important; }
-
-      /* Contact logo Propriété : empêche le chevauchement avec le texte */
-      .contact-info .contact-block-info {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 16px !important;
-      }
-      .contact-info .default27 { align-self: flex-start !important; }
-
-      /* Localisation — détails adresse centrés */
-      .info-blocks2 { align-items: center !important; }
-      .default22 { justify-content: center !important; text-align: center !important; }
-      .address-title-wrapper { text-align: center !important; }
-      .address-title { text-align: center !important; }
-      .pframer-text32 { text-align: center !important; }
-
-      /* Features — texte et cases grises centrés */
-      .category-image { align-items: center !important; }
-      .text-feature-blocks { align-items: center !important; text-align: center !important; }
-      .feature-blocks { align-items: center !important; }
-      .features-kitchen { align-items: center !important; }
-      .default6 { justify-content: center !important; }
-      .amenity-private { text-align: center !important; align-items: center !important; }
-
-      /* Présentation — image rectangle 4/3 (main.css met aspect-ratio:1) */
-      .image-wrapper { aspect-ratio: 4 / 3 !important; }
-    }
 
     /* ── Booking Modal ─────────────────────────────────────────────── */
     .booking-overlay {
@@ -555,9 +505,22 @@
     .category-image { align-items: center !important; }
     .text-feature-blocks, .amenity-private { max-width: 100% !important; width: 100% !important; align-items: flex-start !important; }
 
-    /* Image features : toujours entière (couvre son conteneur) */
-    .top-big2 { overflow: hidden !important; }
-    .image-icon7 { object-fit: cover; object-position: center; }
+    /* Image features : remplit le conteneur, coins arrondis visibles partout */
+    .top-big2 {
+      overflow: hidden !important;
+      padding: 0 !important;
+      position: relative !important;
+    }
+    .image-icon7 {
+      position: absolute !important;
+      top: 0 !important; left: 0 !important;
+      right: 0 !important; bottom: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center;
+      margin: 0 !important;
+    }
 
     /* Image location : toujours entière */
     .image-wrapper5 { overflow: hidden !important; }
@@ -621,30 +584,91 @@
       }
     }
 
-    /* ── 926–1350px : features 2 colonnes ──────────────────────── */
-    @media (min-width: 926px) and (max-width: 1350px) {
-      .features-info { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
-      .surr-panel.active { grid-template-columns: 1fr 1fr; }
-      /* image features : hauteur auto — image entière visible */
-      .top-big2 { height: auto !important; }
-      .image-icon7 { width: 100% !important; height: auto !important; object-fit: unset !important; }
-    }
+    /* ══════════════════════════════════════════════════════════════
+       MOBILE / TABLETTE ≤ 1024px — layout 1 colonne centré
+    ══════════════════════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
 
-    /* ── 769–925px : tablette (iPad Air, Surface Pro 7…) ─────────── */
-    @media (min-width: 769px) and (max-width: 925px) {
-      /* Features : 1 colonne, image entière visible */
+      /* ── GALERIE : images absolues remplissent leur conteneur ── */
+      .images .image-icon3,
+      .images .image-icon4,
+      .images .image-icon5,
+      .images .image-icon6 {
+        position: absolute !important;
+        top: 0 !important; left: 0 !important;
+        right: 0 !important; bottom: 0 !important;
+        width: 100% !important; height: 100% !important;
+        margin: 0 !important; object-fit: cover;
+      }
+
+      /* ── PRÉSENTATION : texte centré, image carrée ── */
+      .container-overview-content {
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+      .overview-info {
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+      }
+      .label-heading { align-items: center !important; text-align: center !important; }
+      .h2framer-text { align-items: center !important; text-align: center !important; }
+      .image-wrapper {
+        width: 100% !important;
+        min-width: 0 !important;
+        flex: none !important;
+        aspect-ratio: 1 / 1 !important;
+        min-height: 0 !important;
+      }
+      .image-icon2 {
+        position: absolute !important;
+        top: 0 !important; left: 0 !important;
+        right: 0 !important; bottom: 0 !important;
+        width: 100% !important; height: 100% !important;
+        object-fit: cover !important;
+        margin: 0 !important;
+      }
+      .testimonial-block {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* ── ÉQUIPEMENTS : 1 colonne, images pleine hauteur, centré ── */
       .features-info { grid-template-columns: 1fr !important; }
-      .top-big2 { height: auto !important; }
-      .image-icon7 { width: 100% !important; height: auto !important; object-fit: unset !important; }
+      .top-big2 { height: auto !important; padding: 0 !important; }
+      .image-icon7 {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+      }
+      .category-image { align-items: center !important; }
+      .text-feature-blocks {
+        align-items: center !important;
+        text-align: center !important;
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+      .feature-blocks { align-items: center !important; }
+      .features-kitchen { align-items: center !important; }
+      .default6 { justify-content: center !important; }
+      .amenity-private {
+        text-align: center !important;
+        align-items: center !important;
+        max-width: 100% !important;
+        width: 100% !important;
+      }
 
-      /* Location : layout vertical centré */
-      .container-location-content { flex-direction: column !important; align-items: center !important; }
-      /* Image location : rectangle 4/3, bouton centré au milieu */
+      /* ── LOCALISATION : colonne centrée, image carrée ── */
+      .container-location-content {
+        flex-direction: column !important;
+        align-items: center !important;
+      }
       .image-wrapper5 {
         width: 100% !important;
         min-width: 0 !important;
         flex: none !important;
-        aspect-ratio: 4 / 3 !important;
+        aspect-ratio: 1 / 1 !important;
         min-height: unset !important;
         align-items: center !important;
         justify-content: center !important;
@@ -655,18 +679,36 @@
         object-fit: cover !important;
         margin-top: 0 !important;
       }
-      /* Texte localisation : centré quand il passe en dessous */
-      .location-info { width: 100% !important; min-width: 0 !important; align-items: center !important; text-align: center !important; }
-      .divframer-sl4zvq-container { min-width: 0 !important; width: 100% !important; align-items: center !important; }
+      .location-info {
+        width: 100% !important;
+        min-width: 0 !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+      .divframer-sl4zvq-container {
+        min-width: 0 !important;
+        width: 100% !important;
+        align-items: center !important;
+      }
       .left2 { align-items: center !important; text-align: center !important; }
       .property-overview { text-align: center !important; width: 100% !important; }
       .question-label { text-align: center !important; width: 100% !important; }
+      .info-blocks2 { align-items: center !important; }
+      .default22 { justify-content: center !important; text-align: center !important; }
+      .address-title-wrapper { text-align: center !important; }
+      .address-title { text-align: center !important; }
+      .pframer-text32 { text-align: center !important; }
 
-      /* Contact : cartes pleine largeur avec marges égales quand elles s'empilent */
-      .contact-info > .home-default { flex-direction: column !important; align-items: stretch !important; }
-      .contact-block { width: 100% !important; min-width: 0 !important; box-sizing: border-box !important; }
-
-      /* Contact logo Propriété : empêche le chevauchement avec le texte */
+      /* ── CONTACT : cartes empilées pleine largeur ── */
+      .contact-info > .home-default {
+        flex-direction: column !important;
+        align-items: stretch !important;
+      }
+      .contact-block {
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+      }
       .contact-info .contact-block-info {
         flex-direction: column !important;
         align-items: flex-start !important;
@@ -674,20 +716,21 @@
       }
       .contact-info .default27 { align-self: flex-start !important; }
 
-      /* Localisation — détails adresse centrés */
-      .info-blocks2 { align-items: center !important; }
-      .default22 { justify-content: center !important; text-align: center !important; }
-      .address-title-wrapper { text-align: center !important; }
-      .address-title { text-align: center !important; }
-      .pframer-text32 { text-align: center !important; }
+      /* ── BOUTONS : texte long autorisé à passer à la ligne ── */
+      .plat-btn .email-links { flex: 1 !important; min-width: 0 !important; }
+      .plat-btn .agency-mail,
+      .plat-btn .agency-mail a { white-space: normal !important; word-break: break-word !important; }
+    }
 
-      /* Features — texte et cases grises centrés en colonne */
-      .category-image { align-items: center !important; }
-      .text-feature-blocks { align-items: center !important; text-align: center !important; }
-      .feature-blocks { align-items: center !important; }
-      .features-kitchen { align-items: center !important; }
-      .default6 { justify-content: center !important; }
-      .amenity-private { text-align: center !important; align-items: center !important; }
+    /* ── Mobile ≤ 768px : ajustements spécifiques ───────────────── */
+    @media (max-width: 768px) {
+      /* Galerie : espacement vertical réduit */
+      .gallery {
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+      }
+      /* Hero badges (Piscine/Chambres/Villa) : centrés */
+      .icon-blocks { justify-content: center !important; }
     }
 
     /* ── Menu mobile — bouton Réserver ───────────────────────────── */
