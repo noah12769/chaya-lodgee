@@ -1,2 +1,5 @@
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /assets/placeholder.svg
+
+Sitemap: https://[DOMAINE]/sitemap.xml

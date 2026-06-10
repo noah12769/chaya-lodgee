@@ -25,15 +25,10 @@
         {
           "key": "Permissions-Policy",
           "value": "camera=(), microphone=(), geolocation=(self)"
-        }
-      ]
-    },
-    {
-      "source": "/public/(.*)",
-      "headers": [
+        },
         {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
         }
       ]
     },
@@ -61,6 +56,33 @@
         {
           "key": "Cache-Control",
           "value": "no-cache, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/assets/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/icons/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/logos/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     },
@@ -95,8 +117,18 @@
     },
     {
       "source": "/reservation",
-      "destination": "https://www.les-terrasses-du-fort.fr/fr-FR/le-studio?noofrooms=1&adults1=2&children1=0&utm_source=website&utm_medium=direct",
+      "destination": "https://www.airbnb.fr/rooms/1556787678845345819",
       "permanent": false
+    },
+    {
+      "source": "/mentions-legales.html",
+      "destination": "/mentions-legales",
+      "permanent": true
+    },
+    {
+      "source": "/politique-confidentialite.html",
+      "destination": "/politique-confidentialite",
+      "permanent": true
     }
   ]
 }
