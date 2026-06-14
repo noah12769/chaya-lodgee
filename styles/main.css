@@ -4375,6 +4375,16 @@ html, body {
     width: auto;
     min-width: 0;
   }
+  /* Cache le ghost placeholder blanc (visible sur fond gris sinon) */
+  .contact-info .contact-buttons .contact-btn-placeholder {
+    display: none;
+  }
+  /* Airbnb seul dans sa ligne → même largeur que colonne droite, poussé à droite */
+  .contact-info .contact-btn-placeholder + .agency-container {
+    margin-left: auto;
+    flex: 0 0 calc(50% - 6px);
+    max-width: calc(50% - 6px);
+  }
 
   /* ── FOOTER : empêche le container 1600px de déborder ── */
   .container-footer-content {
