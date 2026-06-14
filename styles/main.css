@@ -4356,15 +4356,24 @@ html, body {
     flex-shrink: 1 !important;
   }
 
-  /* ── CONTACT : boutons sans débordement ── */
+  /* ── CONTACT : grille 2×2 — chaque bouton = 50% de la ligne ── */
   .contact-info .agency-container-parent {
     width: 100%;
     flex-wrap: wrap;
   }
+  /* Cache le ghost placeholder (boîte blanche vide visible sur fond gris) */
+  .contact-info .contact-btn-placeholder {
+    display: none;
+  }
+  /* Chaque bouton réel = exactement 50% de la ligne */
   .contact-info .agency-container {
-    flex: 1;
+    flex: 0 0 calc(50% - 6px);
+    max-width: calc(50% - 6px);
     min-width: 0;
-    width: auto;
+  }
+  /* Airbnb seul dans sa ligne (ghost caché) → poussé à droite */
+  .contact-info .contact-btn-placeholder + .agency-container {
+    margin-left: auto;
   }
   .contact-info .email-links {
     min-width: 0;
@@ -4375,6 +4384,7 @@ html, body {
     width: auto;
     min-width: 0;
   }
+  /* Réduit l'espace entre icône et texte */
   .contact-info .default28,
   .contact-info .default29 {
     gap: 12px;
