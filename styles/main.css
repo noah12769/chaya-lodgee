@@ -4369,11 +4369,20 @@ html, body {
   .contact-info .email-links {
     min-width: 0;
     flex: 1;
+    flex-shrink: 1;
     height: auto;
   }
   .contact-info .agency-mail {
     width: auto;
     min-width: 0;
+  }
+  /* Texte long (ex: "Réserver sans frais — DM Instagram") : wrap icône à la ligne */
+  .contact-info .plat-btn {
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    align-items: center;
+    height: auto;
+    min-height: unset;
   }
 
   /* ── FOOTER : empêche le container 1600px de déborder ── */
