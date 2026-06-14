@@ -4301,15 +4301,6 @@ html, body {
   }
   .contact-info .contact-block {
     min-width: 0;
-    flex: 1;
-    width: auto;
-  }
-  /* Réduit padding et gap des boutons pour s'adapter à la largeur carte tablette */
-  .contact-info .default28,
-  .contact-info .default29 {
-    padding-left: 12px;
-    padding-right: 12px;
-    gap: 12px;
   }
 
   /* ── HERO : badges et titre centrés sur tablette ── */
@@ -4383,16 +4374,6 @@ html, body {
   .contact-info .agency-mail {
     width: auto;
     min-width: 0;
-  }
-  /* Cache le ghost placeholder blanc (visible sur fond gris sinon) */
-  .contact-info .contact-buttons .contact-btn-placeholder {
-    display: none;
-  }
-  /* Airbnb seul dans sa ligne → même largeur que colonne droite, poussé à droite */
-  .contact-info .contact-btn-placeholder + .agency-container {
-    margin-left: auto;
-    flex: 0 0 calc(50% - 6px);
-    max-width: calc(50% - 6px);
   }
 
   /* ── FOOTER : empêche le container 1600px de déborder ── */
