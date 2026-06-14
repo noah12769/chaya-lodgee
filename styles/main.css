@@ -4375,6 +4375,10 @@ html, body {
     width: auto;
     min-width: 0;
   }
+  .contact-info .default28,
+  .contact-info .default29 {
+    gap: 12px;
+  }
 
   /* ── FOOTER : empêche le container 1600px de déborder ── */
   .container-footer-content {
