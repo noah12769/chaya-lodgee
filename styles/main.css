@@ -1539,6 +1539,47 @@
   box-sizing: border-box;
   gap: var(--font-size-40);
 }
+/* ── CONTACT REDESIGN : titre gauche / boutons droite ── */
+.contact-info .contact-block {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+}
+.contact-info .contact-block-info {
+  flex: 1;
+  min-width: 0;
+  align-items: flex-start;
+  text-align: left;
+  gap: 0;
+}
+.contact-info .label-h3 {
+  min-width: 0;
+  align-items: flex-start;
+}
+.contact-info .h3framer-text2 {
+  width: auto;
+}
+.contact-info .contact-buttons {
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 8px;
+  align-items: stretch;
+  align-self: flex-start;
+}
+.contact-info .agency-container-parent {
+  width: 100%;
+  flex-direction: column;
+  gap: 8px;
+}
+.contact-info .agency-container {
+  width: 100%;
+  flex: none;
+  max-width: none;
+}
+.contact-info .contact-btn-placeholder {
+  display: none;
+}
 .contact-block-info {
   align-self: stretch;
   display: flex;
@@ -3334,6 +3375,16 @@
     width: 100%;
     box-sizing: border-box;
   }
+  /* Repasse en colonne sur mobile : titre au-dessus, boutons en-dessous */
+  .contact-info .contact-block {
+    flex-direction: column;
+  }
+  .contact-info .contact-block-info,
+  .contact-info .contact-buttons {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+  }
   .left2 {
     align-items: center;
     text-align: center;
@@ -4279,28 +4330,15 @@ html, body {
     margin-top: clamp(16px, 4vh, 48px);
   }
 
-  /* ── CONTACT : deux cartes à égale hauteur côte à côte ── */
-
-  /* Force les deux contact-block côte à côte sans retour à la ligne */
+  /* ── CONTACT : cartes côte à côte, taille flexible ── */
   .contact-info > .home-default {
     flex-wrap: nowrap !important;
     align-items: stretch !important;
   }
-
-  /* Supprime le min-width rigide qui empêche les cartes de passer côte à côte */
-  .contact-info .contact-block-info {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 16px;
-  }
-  .contact-info .label-h3 {
-    min-width: 0;
-    width: 100%;
-    align-items: center;
-  }
   .contact-info .contact-block {
     min-width: 0;
+    flex: 1;
+    width: auto;
   }
 
   /* ── HERO : badges et titre centrés sur tablette ── */
@@ -4356,16 +4394,7 @@ html, body {
     flex-shrink: 1 !important;
   }
 
-  /* ── CONTACT : boutons sans débordement ── */
-  .contact-info .agency-container-parent {
-    width: 100%;
-    flex-wrap: wrap;
-  }
-  .contact-info .agency-container {
-    flex: 0 0 290px;
-    max-width: 290px;
-    min-width: 0;
-  }
+  /* ── CONTACT : email-links adaptatif ── */
   .contact-info .email-links {
     min-width: 0;
     flex: 1;
