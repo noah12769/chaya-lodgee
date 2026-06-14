@@ -1539,6 +1539,12 @@
   box-sizing: border-box;
   gap: var(--font-size-40);
 }
+/* ── CONTACT REDESIGN : rangée cartes = même largeur max que les autres sections ── */
+.contact-info > .home-default {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+}
 /* ── CONTACT REDESIGN : titre gauche / boutons droite ── */
 .contact-info .contact-block {
   flex-direction: row;
