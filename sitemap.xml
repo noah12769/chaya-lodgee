@@ -2,29 +2,29 @@
 <!--
   Sitemap — Chaya Lodge
   À soumettre dans Google Search Console une fois le domaine défini.
-  Remplacer [DOMAINE] par le domaine réel.
+  Remplacer chaya-lodgee.vercel.app par le domaine réel.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://[DOMAINE]/</loc>
-    <lastmod>2026-06-10</lastmod>
+    <loc>https://chaya-lodgee.vercel.app/</loc>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://[DOMAINE]/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://chaya-lodgee.vercel.app/" />
   </url>
 
   <url>
-    <loc>https://[DOMAINE]/mentions-legales</loc>
-    <lastmod>2026-06-10</lastmod>
+    <loc>https://chaya-lodgee.vercel.app/mentions-legales</loc>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
 
   <url>
-    <loc>https://[DOMAINE]/politique-confidentialite</loc>
-    <lastmod>2026-06-10</lastmod>
+    <loc>https://chaya-lodgee.vercel.app/politique-confidentialite</loc>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>

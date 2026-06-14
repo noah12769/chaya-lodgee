@@ -820,15 +820,16 @@
   isolation: isolate;
 }
 .image-icon3 {
-  height: 717.9px;
-  width: 717.9px;
-  margin: 0 !important;
   position: absolute;
-  top: -32.7px;
-  left: -32.6px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
   object-fit: cover;
   z-index: 0;
-  flex-shrink: 0;
 }
 .default-icon2 {
   height: 652.7px;
@@ -866,20 +867,16 @@
 }
 .image-icon4,
 .image-icon5 {
-  height: 420.2px;
-  width: 420.2px;
-  margin: 0 !important;
   position: absolute;
-  left: -19.1px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
   object-fit: cover;
   z-index: 0;
-  flex-shrink: 0;
-}
-.image-icon4 {
-  top: -19.1px;
-}
-.image-icon5 {
-  bottom: -19.1px;
 }
 .default-icon3 {
   height: 786.2px;
@@ -890,15 +887,16 @@
   max-width: 100%;
 }
 .image-icon6 {
-  height: 717.9px;
-  width: 717.9px;
-  margin: 0 !important;
   position: absolute;
-  top: -32.6px;
-  left: -32.6px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
   object-fit: cover;
   z-index: 0;
-  flex-shrink: 0;
 }
 .default-icon5,
 .default5 {
@@ -2804,7 +2802,7 @@
 }
 
 /* ── Mobile: bottom sheet ── */
-@media (max-width: 768px) {
+@media (max-width: 999px) {
   .mobile-contact-cta {
     display: flex;
     justify-content: center;
@@ -3033,7 +3031,7 @@
 /* ============================================
    MOBILE (≤ 768px)
    ============================================ */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 999px) {
 
   /* ---- NAV ---- */
   .menu-items2,
@@ -3054,10 +3052,13 @@
     max-width: 100%;
     align-items: center;
     flex-shrink: 1;
+    position: relative;
   }
   .hero-offer {
     align-items: center;
     width: 100%;
+    flex: 1;
+    justify-content: flex-start;
   }
   .h1framer-text {
     width: 100%;
@@ -3077,19 +3078,24 @@
     text-align: center;
   }
 
-  /* Hero 3 cards: centered column, pill shape */
+  /* Hero 3 cards: position absolue au centre exact du hero */
   .icon-blocks {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 40px);
+    max-width: 520px;
     flex-direction: column;
-    width: 100%;
-    max-width: 100%;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    margin-top: clamp(12px, 6vh, 80px);
+    margin-top: 0;
+    z-index: 3;
   }
   .icon-blocks .container-div {
     width: 100%;
-    padding: 0 20px;
+    padding: 0;
     box-sizing: border-box;
     max-width: 520px;
   }
@@ -3424,7 +3430,7 @@
 }
 
 /* ── 768px : toutes les largeurs fixes internes ── */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 999px) {
 
   /* Testimonial : texte interne */
   .pframer-text15 {
@@ -3606,7 +3612,7 @@ html, body {
   max-width: 100%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 999px) {
 
   /* ── 1. BANNER CONTENT (Tour 3D + Book a Time)
          Problème : width 480px + flex-shrink:0 → déborde et se fait clipper
@@ -3796,7 +3802,7 @@ html, body {
   max-width: 100% !important;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 999px) {
 
   /* ── Toutes les sections : border-box + max-width 100% ── */
   .hero, .overview, .gallery, .features,
@@ -3907,7 +3913,7 @@ html, body {
    ============================================================ */
 
 /* ── 1. NAV LOGO : masquer le nom de marque sur mobile, garder l'icône ── */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 999px) {
   .logo-menu-button .black7 > .map-link {
     display: none;
   }
@@ -4012,7 +4018,7 @@ html, body {
 /* ── 5. Contact form panel : 100vh bugué sur iOS Safari (barre navigateur)
          -webkit-fill-available = hauteur visible réelle sur iPhone ── */
 @supports (-webkit-touch-callout: none) {
-  @media (max-width: 768px) {
+  @media (max-width: 999px) {
     .contact-form-panel {
       height: 90svh;
       height: -webkit-fill-available;
@@ -4041,7 +4047,7 @@ html, body {
          Problème : IntersectionObserver ne se déclenche pas toujours sur iOS
          → éléments restent opacity:0 = grand espace blanc dans la galerie
 ── */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 999px) {
   [data-reveal] {
     opacity: 1 !important;
     transform: none !important;
@@ -4057,7 +4063,7 @@ html, body {
          l'icône remonte seule sur une ligne, text seul en dessous,
          rendu décalé sur iOS
 ── */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 999px) {
   .default6 {
     flex-wrap: nowrap !important;
     justify-content: flex-start !important;
@@ -4196,9 +4202,19 @@ html, body {
    IPAD FIX — galerie pleine largeur + cartes contact égales
    Cible : 769px–1350px (iPad portrait / paysage, surface pro…)
    ============================================================ */
-@media screen and (min-width: 769px) and (max-width: 1350px) {
+@media screen and (min-width: 1000px) and (max-width: 1350px) {
 
-  /* ── GALERIE : rangées d'images pleine largeur ── */
+  /* ── GALERIE : hauteur uniforme progressive (clamp 300→440px) ── */
+
+  /* Première image standalone (salon) — carré 1:1 */
+  .images > .default-icon {
+    width: 100%;
+    aspect-ratio: 1/1;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    flex-shrink: 0;
+  }
 
   /* Conteneurs de rangée → colonne pleine largeur */
   .images > .home-default {
@@ -4207,73 +4223,50 @@ html, body {
     flex-wrap: nowrap;
   }
 
-  /* Grande image carrée dans la rangée → pleine largeur, hauteur fixe */
+  /* Conteneur carré (image absolue interne) */
   .images > .home-default > .default {
     width: 100%;
     min-width: unset;
-    height: 440px;
+    aspect-ratio: 1/1;
+    height: auto;
     flex: none;
   }
 
-  /* Image paysage dans la rangée → pleine largeur */
+  /* Image paysage directe → carré 1:1 */
   .images > .home-default > .default-icon2 {
     width: 100%;
-    height: 380px;
+    aspect-ratio: 1/1;
+    height: auto;
     flex: none;
   }
 
-  /* Images absolues dans .default : couvrir tout le conteneur */
-  .images .image-icon3,
-  .images .image-icon6 {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    margin: 0 !important;
-    object-fit: cover;
-  }
-
-  /* Conteneur de la double rangée → colonne pleine largeur */
+  /* Double rangée → colonne pleine largeur */
   .images > .images2 {
     width: 100%;
     flex-direction: column;
     flex-wrap: nowrap;
   }
 
-  /* Deux petites images côte à côte dans displayed-images */
+  /* Paire de petites images — côte à côte à la tablette */
   .images2 > .displayed-images {
     width: 100%;
+    flex-direction: row;
   }
   .images2 .default2 {
     flex: 1;
-    width: auto;
     min-width: 0;
-    height: 300px;
+    aspect-ratio: 1/1;
+    height: auto;
   }
 
-  /* Images absolues dans .default2 : couvrir tout le conteneur */
-  .images .image-icon4,
-  .images .image-icon5 {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    margin: 0 !important;
-    object-fit: cover;
-  }
-
-  /* Grande image pleine largeur après displayed-images */
+  /* Grande image pleine largeur après displayed-images → carré 1:1 */
   .images2 > .default-icon3 {
     width: 100%;
+    aspect-ratio: 1/1;
     height: auto;
-    max-height: 500px;
+    max-height: unset;
     object-fit: cover;
+    object-position: center;
   }
 
   /* ── HERO : s'adapte à la hauteur visible (exclut chrome du navigateur) ── */
@@ -4297,15 +4290,106 @@ html, body {
   /* Supprime le min-width rigide qui empêche les cartes de passer côte à côte */
   .contact-info .contact-block-info {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: 16px;
   }
   .contact-info .label-h3 {
     min-width: 0;
     width: 100%;
+    align-items: center;
   }
   .contact-info .contact-block {
     min-width: 0;
+  }
+
+  /* ── HERO : badges et titre centrés sur tablette ── */
+  .container-hero-content {
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .hero-offer {
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  /* ── PRÉSENTATION : hauteur proportionnelle, image de fond garantie ── */
+  .image-wrapper {
+    min-height: clamp(420px, 45vw, 640px);
+    height: auto;
+  }
+  .image-icon2 {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 0;
+  }
+
+  /* ── LOCALISATION : hauteur proportionnelle, image de fond garantie ── */
+  .image-wrapper5 {
+    min-height: clamp(380px, 45vw, 640px);
+    height: auto;
+  }
+  .image-icon10 {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 0;
+  }
+
+  /* ── ÉQUIPEMENTS : images carrées 1:1 ── */
+  .top-big2 {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1/1 !important;
+    padding: 0 !important;
+  }
+  .image-icon7 {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    flex-shrink: 1 !important;
+  }
+
+  /* ── CONTACT : boutons sans débordement ── */
+  .contact-info .agency-container-parent {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .contact-info .agency-container {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+  }
+  .contact-info .email-links {
+    min-width: 0;
+    flex: 1;
+    height: auto;
+  }
+  .contact-info .agency-mail {
+    width: auto;
+    min-width: 0;
+  }
+
+  /* ── FOOTER : empêche le container 1600px de déborder ── */
+  .container-footer-content {
+    width: 100%;
+    flex-shrink: 1;
+  }
+  .default37 .menu-items {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 40px;
+    font-size: clamp(20px, 2.6vw, 36px);
+  }
+  .default37 .overview3 {
+    font-size: inherit;
+    line-height: 1.2;
   }
 }
 
@@ -4314,7 +4398,7 @@ html, body {
    Problème : à ≤925px, .acres/.cottage/.for-sale passent à 32px
    → les 4 rangées font 176px → déborde la hero sur iPhone.
    ============================================================ */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 999px) {
   /* Valeurs info-bar réduites pour tenir dans la hero */
   .acres, .cottage, .for-sale {
     font-size: 15px !important;
@@ -4444,7 +4528,7 @@ html, body, .w-light, .end-of-bodystart {
 }
 
 /* ── iPad Mini (768px) : forcer layout tablette, pas mobile ── */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1000px) {
   .icon-blocks {
     flex-direction: row !important;
     width: 624px !important;

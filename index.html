@@ -14,7 +14,7 @@
     <meta name="author" content="Chaya Lodge" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="format-detection" content="telephone=no" />
-    <link rel="canonical" href="https://[DOMAINE]/" />
+    <link rel="canonical" href="https://chaya-lodgee.vercel.app/" />
 
     <!-- ═══════════════════════════════════════════════════════════
          Open Graph — Partage réseaux sociaux (Facebook, WhatsApp…)
@@ -23,8 +23,8 @@
     <meta property="og:site_name" content="Chaya Lodge" />
     <meta property="og:title" content="Chaya Lodge — Villa Piscine Privée, Petit-Bourg, Guadeloupe" />
     <meta property="og:description" content="Villa insolite avec piscine privée au bord de la rivière Lézarde. 2 chambres, nature tropicale, Cascade aux Écrevisses à 10 min. Réservez sur Airbnb ou Booking." />
-    <meta property="og:url" content="https://[DOMAINE]/" />
-    <meta property="og:image" content="https://[DOMAINE]/assets/images/og-image.jpg" />
+    <meta property="og:url" content="https://chaya-lodgee.vercel.app/" />
+    <meta property="og:image" content="https://chaya-lodgee.vercel.app/assets/images/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/jpeg" />
@@ -37,7 +37,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Chaya Lodge — Villa Piscine Privée, Guadeloupe" />
     <meta name="twitter:description" content="Villa insolite avec piscine privée au bord de la Lézarde, Petit-Bourg. Réservez sur Airbnb ou Booking." />
-    <meta name="twitter:image" content="https://[DOMAINE]/assets/images/og-image.jpg" />
+    <meta name="twitter:image" content="https://chaya-lodgee.vercel.app/assets/images/og-image.jpg" />
 
     <!-- ═══════════════════════════════════════════════════════════
          Favicon & icônes mobiles
@@ -54,7 +54,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- LCP image : préchargée pour améliorer le score Core Web Vitals -->
-    <link rel="preload" as="image" href="./assets/images/photo-hero.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="./assets/images/photo-hero.avif" fetchpriority="high" />
 
     <!-- ═══════════════════════════════════════════════════════════
          JSON-LD Schema.org — Référencement local & structuré
@@ -66,11 +66,11 @@
       "@graph": [
         {
           "@type": "LodgingBusiness",
-          "@id": "https://[DOMAINE]/#lodging",
+          "@id": "https://chaya-lodgee.vercel.app/#lodging",
           "name": "Chaya Lodge",
           "description": "Villa insolite avec piscine privée au bord de la rivière Lézarde, à Petit-Bourg, Guadeloupe. 2 chambres, nature tropicale, Cascade aux Écrevisses à 10 min.",
-          "url": "https://[DOMAINE]/",
-          "image": "https://[DOMAINE]/assets/images/photo-hero.jpg",
+          "url": "https://chaya-lodgee.vercel.app/",
+          "image": "https://chaya-lodgee.vercel.app/assets/images/photo-hero.avif",
           "sameAs": [
             "https://www.instagram.com/chaya_lodgee/",
             "https://www.tiktok.com/@chaya_lodgee",
@@ -113,9 +113,9 @@
         },
         {
           "@type": "WebSite",
-          "@id": "https://[DOMAINE]/#website",
+          "@id": "https://chaya-lodgee.vercel.app/#website",
           "name": "Chaya Lodge",
-          "url": "https://[DOMAINE]/",
+          "url": "https://chaya-lodgee.vercel.app/",
           "inLanguage": "fr-FR",
           "description": "Site officiel de Chaya Lodge en Guadeloupe",
           "publisher": {
@@ -130,7 +130,7 @@
               "@type": "ListItem",
               "position": 1,
               "name": "Accueil",
-              "item": "https://[DOMAINE]/"
+              "item": "https://chaya-lodgee.vercel.app/"
             }
           ]
         }
@@ -138,8 +138,8 @@
     }
     </script>
 
-    <link rel="stylesheet" href="./styles/global.css?v=20260604-5" />
-    <link rel="stylesheet" href="./styles/main.css?v=20260604-5" />
+    <link rel="stylesheet" href="./styles/global.css?v=20260610-4" />
+    <link rel="stylesheet" href="./styles/main.css?v=20260614-01" />
     <!-- Fonts chargées de manière non-bloquante (évite render-blocking) -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
@@ -269,8 +269,7 @@
     .plat-card:hover { opacity: .8; transform: translateY(-2px); }
     .plat-ico { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .plat-name { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; color: #333; text-align: center; line-height: 1.2; }
-    @media (max-width: 900px) { .surr-panel.active { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 600px) { .surroundings { padding: var(--padding-84,84px) var(--padding-16,16px); } .surr-panel.active { grid-template-columns: 1fr; } .plat-grid { grid-template-columns: repeat(3,1fr); } }
+    @media (max-width: 999px) { .surroundings { padding: var(--padding-84,84px) var(--padding-16,16px); } .surr-panel.active { grid-template-columns: 1fr; } .plat-grid { grid-template-columns: repeat(3,1fr); } }
 
     /* ── Overflow global : aucun débordement horizontal ───────────
        Appliqué avant les règles galerie pour ne pas casser les abs. */
@@ -341,35 +340,22 @@
     .contact-info > .home-default { align-items: stretch !important; }
     .contact-block { height: auto !important; flex: 1 !important; }
 
-    /* Contact buttons : rangs empilés, Airbnb|Booking côte-à-côte dans rang 1
-       align-items:stretch garantit que les deux rangs font exactement la même largeur */
+    /* Contact buttons : hauteur auto + collé en bas de la carte */
     .contact-buttons {
-      flex-direction: column !important;
-      width: 100% !important;
-      align-items: stretch !important;
+      height: auto !important;
+      margin-top: auto !important;
     }
-    .contact-buttons .agency-container-parent {
-      width: 100% !important;
+    /* Slot vide invisible — garde la place */
+    .contact-btn-placeholder {
+      opacity: 0 !important;
+      pointer-events: none !important;
     }
-    .contact-buttons .agency-container {
-      flex: 1 !important;
-      width: auto !important;
-      max-width: 100% !important;
-      min-width: 0 !important;
-    }
-    .contact-buttons .default28,
-    .contact-buttons .default29 {
-      width: 100% !important;
-      box-sizing: border-box !important;
-    }
-
-    /* (logo overlap rule moved into tablet/mobile breakpoints below) */
 
     /* Cartes entièrement cliquables */
     .default28, .default29 { cursor: pointer; }
     .default21 { cursor: pointer; }
 
-    /* Boutons plateformes — même taille que les boutons Email/Appeler/Carte */
+    /* Boutons plateformes */
     .plat-btn {
       padding: 16px 20px !important;
       min-height: unset !important;
@@ -505,20 +491,25 @@
     .category-image { align-items: center !important; }
     .text-feature-blocks, .amenity-private { max-width: 100% !important; width: 100% !important; align-items: flex-start !important; }
 
-    /* Image features : remplit le conteneur, coins arrondis visibles partout */
+    /* Image features : position absolue garantie — remplit le conteneur à toutes les tailles.
+       image-banners doit s'étirer (align-self:stretch) sinon il s'effondre à 0px de largeur
+       car image-icon7 est hors du flux (position:absolute) et ne contribue pas à la taille. */
+    .image-banners { align-self: stretch !important; }
     .top-big2 {
+      position: relative !important;
+      width: 100% !important;
       overflow: hidden !important;
       padding: 0 !important;
-      position: relative !important;
+      border-radius: var(--br-16) !important;
+      /* hauteur gérée par le CSS de base (517.3px desktop) et les breakpoints */
     }
     .image-icon7 {
       position: absolute !important;
-      top: 0 !important; left: 0 !important;
-      right: 0 !important; bottom: 0 !important;
+      inset: 0 !important;
       width: 100% !important;
       height: 100% !important;
       object-fit: cover !important;
-      object-position: center;
+      object-position: center !important;
       margin: 0 !important;
     }
 
@@ -587,7 +578,7 @@
     /* ══════════════════════════════════════════════════════════════
        MOBILE / TABLETTE ≤ 1024px — layout 1 colonne centré
     ══════════════════════════════════════════════════════════════ */
-    @media (max-width: 1024px) {
+    @media (max-width: 999px) {
 
       /* ── GALERIE : images absolues remplissent leur conteneur ── */
       .images .image-icon3,
@@ -598,7 +589,31 @@
         top: 0 !important; left: 0 !important;
         right: 0 !important; bottom: 0 !important;
         width: 100% !important; height: 100% !important;
-        margin: 0 !important; object-fit: cover;
+        margin: 0 !important; object-fit: cover !important;
+        object-position: center !important;
+      }
+
+      /* Galerie mobile : carrés 1:1, object-fit cover */
+      .default-icon {
+        aspect-ratio: 1/1 !important;
+        height: auto !important;
+        width: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+      }
+      .default-icon2,
+      .default-icon3 {
+        aspect-ratio: 1/1 !important;
+        height: auto !important;
+        width: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+      }
+      .default,
+      .default2 {
+        width: 100% !important;
+        aspect-ratio: 1/1 !important;
+        height: auto !important;
       }
 
       /* ── PRÉSENTATION : texte centré, image carrée ── */
@@ -617,8 +632,9 @@
         width: 100% !important;
         min-width: 0 !important;
         flex: none !important;
-        aspect-ratio: 1 / 1 !important;
-        min-height: 0 !important;
+        aspect-ratio: unset !important;
+        min-height: 420px !important;
+        height: auto !important;
       }
       .image-icon2 {
         position: absolute !important;
@@ -636,12 +652,7 @@
 
       /* ── ÉQUIPEMENTS : 1 colonne, images pleine hauteur, centré ── */
       .features-info { grid-template-columns: 1fr !important; }
-      .top-big2 { height: auto !important; padding: 0 !important; }
-      .image-icon7 {
-        position: static !important;
-        width: 100% !important;
-        height: auto !important;
-      }
+      .top-big2 { height: auto !important; aspect-ratio: 1/1 !important; }
       .category-image { align-items: center !important; }
       .text-feature-blocks {
         align-items: center !important;
@@ -659,7 +670,7 @@
         width: 100% !important;
       }
 
-      /* ── LOCALISATION : colonne centrée, image carrée ── */
+      /* ── LOCALISATION : colonne centrée, image proportionnelle ── */
       .container-location-content {
         flex-direction: column !important;
         align-items: center !important;
@@ -668,12 +679,15 @@
         width: 100% !important;
         min-width: 0 !important;
         flex: none !important;
-        aspect-ratio: 1 / 1 !important;
-        min-height: unset !important;
-        align-items: center !important;
-        justify-content: center !important;
+        aspect-ratio: unset !important;
+        min-height: 380px !important;
+        height: auto !important;
+        align-items: flex-end !important;
+        justify-content: flex-end !important;
       }
       .image-icon10 {
+        position: absolute !important;
+        inset: 0 !important;
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
@@ -693,16 +707,32 @@
       .left2 { align-items: center !important; text-align: center !important; }
       .property-overview { text-align: center !important; width: 100% !important; }
       .question-label { text-align: center !important; width: 100% !important; }
-      .info-blocks2 { align-items: center !important; }
-      .default22 { justify-content: center !important; text-align: center !important; }
-      .address-title-wrapper { text-align: center !important; }
-      .address-title { text-align: center !important; }
-      .pframer-text32 { text-align: center !important; }
+      .info-blocks2 { align-items: stretch !important; }
+      .features-kitchen { width: 100% !important; }
+      .default22 {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+      }
+      .address-title-wrapper { align-items: center !important; text-align: center !important; }
+      .address-title { align-items: center !important; text-align: center !important; }
+      .pframer-text32 {
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+      }
+      .floors { text-align: center !important; width: 100% !important; }
 
-      /* ── CONTACT : cartes empilées pleine largeur ── */
+      /* ── CONTACT : cartes empilées centrées ── */
+      .contact-info {
+        align-items: center !important;
+        width: 100% !important;
+      }
       .contact-info > .home-default {
         flex-direction: column !important;
-        align-items: stretch !important;
+        align-items: center !important;
+        width: 100% !important;
       }
       .contact-block {
         width: 100% !important;
@@ -711,19 +741,24 @@
       }
       .contact-info .contact-block-info {
         flex-direction: column !important;
-        align-items: flex-start !important;
+        align-items: center !important;
+        text-align: center !important;
         gap: 16px !important;
       }
-      .contact-info .default27 { align-self: flex-start !important; }
+      .contact-info .default27 { align-self: center !important; }
+
+      /* ── BOUTONS CONTACT : 1 colonne pleine largeur sur mobile ── */
+      .agency-container-parent { flex-direction: column !important; }
+      .contact-btn-placeholder { display: none !important; }
 
       /* ── BOUTONS : texte long autorisé à passer à la ligne ── */
-      .plat-btn .email-links { flex: 1 !important; min-width: 0 !important; }
+      .plat-btn .email-links { flex: 1 !important; min-width: 0 !important; height: auto !important; }
       .plat-btn .agency-mail,
       .plat-btn .agency-mail a { white-space: normal !important; word-break: break-word !important; }
     }
 
     /* ── Mobile ≤ 768px : ajustements spécifiques ───────────────── */
-    @media (max-width: 768px) {
+    @media (max-width: 999px) {
       /* Galerie : espacement vertical réduit */
       .gallery {
         padding-top: 80px !important;
@@ -751,7 +786,7 @@
       <main class="end-of-bodystart" id="main-content" role="main">
         <section class="hero">
           <div class="top-big">
-            <img class="image-icon" alt="Vue extérieure — Chaya Lodge, Guadeloupe" src="./assets/images/photo-hero.jpg" fetchpriority="high" />
+            <img class="image-icon" alt="Vue extérieure — Chaya Lodge, Guadeloupe" src="./assets/images/photo-hero.avif" fetchpriority="high" />
           </div>
           <div class="overlay"></div>
           <div class="container-hero-content">
@@ -783,7 +818,7 @@
                         class="divider-icon"
                         loading="lazy"
                         alt=""
-                        src="./assets/icons/390898790.svg"
+                        src="./assets/icons/icon-bed.svg"
                       />
                     </div>
                     <div class="logo">
@@ -798,7 +833,7 @@
                       <img
                         class="divider-icon"
                         alt=""
-                        src="./assets/icons/2930294347.svg"
+                        src="./assets/icons/icon-pool.svg"
                       />
                     </div>
                     <div class="logo">
@@ -944,14 +979,14 @@
             </div>
             <div class="image-wrapper" data-reveal="scale" data-reveal-delay="200">
               <div class="center-small">
-                <img class="image-icon2" alt="Intérieur — Chaya Lodge" src="./assets/images/photo-pool.jpg" />
+                <img class="image-icon2" alt="Intérieur — Chaya Lodge" src="./assets/images/photo-pool.avif" />
               </div>
               <div class="testimonial-block">
                 <div class="component-110">
                   <img
                     class="divider-icon"
                     alt=""
-                    src="./assets/icons/547985882.svg"
+                    src="./assets/icons/icon-quote.svg"
                   />
                 </div>
                 <div class="text-attribution">
@@ -991,7 +1026,7 @@
                 class="default-icon"
                 loading="lazy"
                 alt="Séjour — Chaya Lodge"
-                src="./assets/images/photo-salon.jpg"
+                src="./assets/images/photo-salon.avif"
                 data-reveal="scale"
               />
 
@@ -1025,7 +1060,7 @@
                       class="image-icon5"
                       loading="lazy"
                       alt="Extérieur — Chaya Lodge"
-                      src="./assets/images/photo-river.jpg"
+                      src="./assets/images/photo-river.avif"
                     />
                   </div>
                 </div>
@@ -1041,7 +1076,7 @@
                   class="default-icon2"
                   loading="lazy"
                   alt="Salle de bain détail — Chaya Lodge"
-                  src="./assets/images/photo-insolite.jpg"
+                  src="./assets/images/photo-insolite.avif"
                 />
 
                 <div class="default">
@@ -1196,7 +1231,7 @@
                         class="image-icon7"
                         loading="lazy"
                         alt="Cuisine équipée — Chaya Lodge"
-                        src="./assets/images/photo-kitchen.jpg"
+                        src="./assets/images/photo-kitchen.avif"
                       />
                     </div>
                   </div>
@@ -1282,7 +1317,7 @@
                         class="image-icon7"
                         loading="lazy"
                         alt=""
-                        src="./assets/images/photo-salon-tv.jpg"
+                        src="./assets/images/photo-salon-tv.avif"
                       />
                     </div>
                   </div>
@@ -1341,7 +1376,7 @@
                         class="image-icon7"
                         loading="lazy"
                         alt=""
-                        src="./assets/images/photo-bathroom.jpg"
+                        src="./assets/images/photo-bathroom.avif"
                       />
                     </div>
                   </div>
@@ -1354,7 +1389,7 @@
           <div class="container-location-content">
             <div class="image-wrapper5" data-reveal="left">
               <div class="center-small2">
-                <img class="image-icon10" alt="Localisation — Chaya Lodge, Guadeloupe" loading="lazy" src="./assets/images/photo-cascade.jpg" />
+                <img class="image-icon10" alt="Localisation — Chaya Lodge, Guadeloupe" loading="lazy" src="./assets/images/photo-cascade.avif" />
               </div>
               <div class="button-layout">
                 <div class="default21" id="mapContainer">
@@ -1600,52 +1635,44 @@
                     </div>
                   </div>
                   <div class="contact-buttons">
+                    <!-- ROW 1 : Message Instagram + slot vide -->
                     <div class="agency-container-parent">
                       <div class="agency-container">
-                        <div class="default28" id="instagramContactCard">
+                        <div class="default28 plat-btn" id="instagramContactCard">
                           <div class="after35"></div>
                           <div class="background3"></div>
                           <div class="email-links">
                             <div class="agency-mail">
-                              <a
-                                class="view-on-map"
-                                href="https://www.instagram.com/chaya_lodgee/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                >Message Instagram</
-                              >
+                              <a class="view-on-map" href="https://www.instagram.com/chaya_lodgee/" target="_blank" rel="noopener noreferrer">Message Instagram</a>
                             </div>
                           </div>
-                          <div class="component-126">
-                            <svg class="divider-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+                          <div class="component-126 plat-ico-wrap">
+                            <svg class="plat-logo-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
                           </div>
                         </div>
                       </div>
+                      <div class="agency-container contact-btn-placeholder" aria-hidden="true">
+                        <div class="default28 plat-btn"></div>
+                      </div>
                     </div>
+                    <!-- ROW 2 : Voir sur la Carte + slot vide -->
                     <div class="agency-container-parent">
                       <div class="agency-container">
-                        <div class="default28" id="mapContactCard">
+                        <div class="default28 plat-btn" id="mapContactCard">
                           <div class="after35"></div>
                           <div class="background3"></div>
                           <div class="email-links">
                             <div class="agency-mail">
-                              <a
-                                class="view-on-map maps-link"
-                                href="#"
-                                id="mapLinkContact"
-                                >Voir sur la Carte</
-                              >
+                              <a class="view-on-map maps-link" href="#" id="mapLinkContact">Voir sur la Carte</a>
                             </div>
                           </div>
-                          <div class="component-126">
-                            <img
-                              class="divider-icon"
-                              loading="lazy"
-                              alt=""
-                              src="./assets/icons/2631352072.svg"
-                            />
+                          <div class="component-126 plat-ico-wrap">
+                            <img class="plat-logo-ico" loading="lazy" alt="" src="./assets/icons/icon-map.svg" />
                           </div>
                         </div>
+                      </div>
+                      <div class="agency-container contact-btn-placeholder" aria-hidden="true">
+                        <div class="default28 plat-btn"></div>
                       </div>
                     </div>
                   </div>
@@ -1662,7 +1689,11 @@
                     </div>
                   </div>
                   <div class="contact-buttons">
+                    <!-- ROW 1 : slot vide + Airbnb -->
                     <div class="agency-container-parent">
+                      <div class="agency-container contact-btn-placeholder" aria-hidden="true">
+                        <div class="default28 plat-btn"></div>
+                      </div>
                       <div class="agency-container">
                         <div class="default28 plat-btn" id="airbnbDirectBtn">
                           <div class="after35"></div>
@@ -1677,6 +1708,9 @@
                           </div>
                         </div>
                       </div>
+                    </div>
+                    <!-- ROW 2 : Booking + Instagram DM -->
+                    <div class="agency-container-parent">
                       <div class="agency-container">
                         <div class="default29 plat-btn">
                           <div class="after35"></div>
@@ -1691,9 +1725,7 @@
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="agency-container-parent">
-                      <div class="agency-container" style="width:100%">
+                      <div class="agency-container">
                         <div class="default28 plat-btn">
                           <div class="after35"></div>
                           <div class="background3"></div>
@@ -2134,7 +2166,7 @@
         var els = document.querySelectorAll('[data-reveal]');
         if (!els.length) return;
         // Sur mobile ou file://, forcer la visibilité immédiatement
-        var isMobile = window.innerWidth <= 768;
+        var isMobile = window.innerWidth <= 999;
         var isFile = window.location.protocol === 'file:';
         if (isMobile || isFile) {
           els.forEach(function(el) {

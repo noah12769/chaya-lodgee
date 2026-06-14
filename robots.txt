@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /assets/placeholder.svg
 
-Sitemap: https://[DOMAINE]/sitemap.xml
+Sitemap: https://chaya-lodgee.vercel.app/sitemap.xml
