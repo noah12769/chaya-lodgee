@@ -4362,9 +4362,9 @@ html, body {
     flex-wrap: wrap;
   }
   .contact-info .agency-container {
-    flex: 1;
+    flex: 0 0 290px;
+    max-width: 290px;
     min-width: 0;
-    width: auto;
   }
   .contact-info .email-links {
     min-width: 0;
